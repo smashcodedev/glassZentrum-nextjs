@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 // components/footer/SocialIcons.tsx
 import React from "react";
 

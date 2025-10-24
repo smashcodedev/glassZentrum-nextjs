@@ -1,16 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Service } from "@/app/data/Services";
-import { ArrowRight } from "lucide-react";
 
-interface ServiceCardProps extends Service {}
-
-const ServiceCard: React.FC<ServiceCardProps> = ({
-  title,
-  description,
-  image,
-  href,
-}) => {
+const ServiceCard: React.FC<Service> = ({ title, description, image, href }) => {
   return (
     <article className="bg-white rounded-2xl overflow-hidden shadow-[0_6px_30px_rgba(18,18,18,0.06)] flex flex-col justify-between">
       {/* Image */}
@@ -28,7 +20,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       <div className="p-6 md:p-7 flex flex-col flex-grow justify-between">
         <div>
           <h3
-            className="text-[18px] md:text-[20px] font-bold text-[#00000] leading-snug mb-3"
+            className="text-[18px] md:text-[20px] font-bold text-[#000] leading-snug mb-3"
             style={{ fontFamily: "var(--font-inter)" }}
           >
             {title}
@@ -45,9 +37,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         <Link
           href={href}
           aria-label={`Read more about ${title}`}
-          className="inline-flex bg-[#F7F7F7] items-center justify-center w-10 h-10 rounded-full border border-none  transition-all hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+          className="inline-flex bg-[#F7F7F7] items-center justify-center w-10 h-10 rounded-full transition-all hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-400"
         >
-         <img src="/images/services/arrow-right.svg" />
+          <img src="/images/services/arrow-right.svg" alt="arrow right" />
         </Link>
       </div>
     </article>
