@@ -28,7 +28,6 @@ export default function HomePage() {
 
       <section className="bg-white">
         <ImageTextSection
-          paragraph={`We process flat glass in all its shapes and colors. We find professional solutions for every challenge, which we implement with care and precision. If desired, we can also take care of the subsequent assembly - be it in your private home or in your business premises.`}
           imageSrc="/images/building.jpg"
         />
 

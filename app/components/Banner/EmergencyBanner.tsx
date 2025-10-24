@@ -44,7 +44,7 @@ const EmergencyBanner: React.FC<EmergencyBannerProps> = ({
           <h3
             className="
               font-inter
-              font-medium
+              font-semibold
               text-[32px] sm:text-[38px] md:text-[46px]
               leading-[54px]
               text-white
@@ -63,9 +63,7 @@ const EmergencyBanner: React.FC<EmergencyBannerProps> = ({
               text-[16px]
               leading-[26px]
               text-white/90
-              opacity-80
-              
-            "
+              opacity-80"
             style={{ fontFamily: "var(--font-inter)" }}
           >
             {subtitle}
@@ -73,7 +71,7 @@ const EmergencyBanner: React.FC<EmergencyBannerProps> = ({
 
           {/* Highlight */}
           <p
-            className="font-inter opacity-90 font-semibold text-sm sm:text-lg text-white mt-2 mb-6 leading-[26px]"
+            className="font-inter opacity-90 font-semibold text-sm sm:text-lg text-white  mb-6  leading-[26px]"
             style={{ fontFamily: "var(--font-inter)" }}
           >
             {highlight}

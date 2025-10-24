@@ -83,7 +83,7 @@ export default function GlassProjectSection({
                 className="inline-flex items-center gap-3 text-[#00A13A] font-semibold text-[17px] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#0f9b40] rounded"
               >
                 <span>{eyebrow}</span>
-                <CircleArrowRight />
+               <img className="w-5 h-5" src="/images/arrow.svg" />
               </a>
             </div>
 

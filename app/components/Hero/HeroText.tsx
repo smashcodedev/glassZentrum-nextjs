@@ -10,8 +10,8 @@ export default function HeroText() {
       {/* Heading */}
       <h1
         className="font-bold text-[#0E0E0E]
-        text-[clamp(2rem,5vw,68px)] leading-[1.1]
-        tracking-[0] max-w-[600px]"
+        text-[clamp(2rem,5vw,68px)] leading-[1.1] lg:leading-[73px]
+        tracking-[0] max-w-[600px] " 
         style={{ fontFamily: "var(--font-inter)" }}
       >
         Your service provider for showers and glass partitions

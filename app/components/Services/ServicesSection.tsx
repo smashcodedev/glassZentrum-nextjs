@@ -23,7 +23,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
             {title}
           </h2>
           <p
-            className="mt-4 text-sm sm:text-base text-[#585C67] max-w-[720px] mx-auto"
+            className="mt-4 text-sm font-normal sm:text-base text-[#585C67] max-w-[720px] mx-auto"
             style={{ fontFamily: "var(--font-inter)" }}
           >
             {subtitle}

@@ -17,9 +17,7 @@ export interface ImageTextSectionProps {
 const ImageTextSection: React.FC<ImageTextSectionProps> = ({
   eyebrow = "Information",
   title = "In our glassworks in Altona",
-  paragraph = `We process flat glass in all its shapes and colors. We find professional solutions for every
-challenge, which we implement with care and precision. If desired, we can also take care of the
-subsequent assembly — be it in your private home or in your business premises.`,
+  paragraph = `We process flat glass in all its shapes and colors. We find professional solutions for every challenge, which we implement with care and precision. If desired, we can also take care of the subsequent assembly - be it in your private home or in your business premises. `,
   ctaLabel = "Contact Us",
   ctaHref = "/contact",
   imageSrc = "/images/building.jpg",
