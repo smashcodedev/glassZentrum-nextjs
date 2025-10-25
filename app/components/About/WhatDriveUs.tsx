@@ -12,7 +12,7 @@ export default function WhatDriveUs() {
         "We carry out all orders relating to the production and processing of glass products, mirrors, furniture and other constructions.",
       ]}
       ctaHref="/contact"
-      imageSrc="/images/driveUs.png"
+      imageSrc="/images/about/driveUs.png"
       imageHeight="h-[450px] sm:h-[520px] lg:h-[650px]"
       textSectionHeight="min-h-[400px]"
       className="overflow-visible !pt-0 mt-0 !pb-[10rem]"
