@@ -3,6 +3,7 @@
 import React from "react";
 
 export interface BannerProps {
+  children?: React.ReactNode;
   title?: string;
   subtitle?: string;
   highlight?: string;
@@ -89,6 +90,7 @@ const Banner: React.FC<BannerProps> = ({
 
   showCta = true,
   className,
+  children
 }) => {
   const normalizedRadiusClass = (() => {
     if (!borderRadius) return "rounded-2xl";
@@ -196,6 +198,8 @@ const Banner: React.FC<BannerProps> = ({
               {ctaLabel}
             </button>
           )}
+
+          {children}
         </div>
       </div>
     </div>

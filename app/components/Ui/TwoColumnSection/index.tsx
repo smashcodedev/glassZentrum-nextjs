@@ -33,6 +33,7 @@ export interface TwoColumnSectionProps {
   imageClassName?: string;
   borderRaduisImage?: string;
   imageClass?: string;
+  noNextImage?: boolean;
 }
 
 const TwoColumnSection: React.FC<TwoColumnSectionProps> = ({
@@ -63,6 +64,7 @@ const TwoColumnSection: React.FC<TwoColumnSectionProps> = ({
   imageClassName,
   borderRaduisImage,
   imageClass,
+  noNextImage,
 }) => {
   return (
     <section
@@ -91,15 +93,23 @@ const TwoColumnSection: React.FC<TwoColumnSectionProps> = ({
                 imageClassName
               )}
             >
-              <Image
-                src={imageSrc}
-                alt={imageAlt || "section image"}
-                width={960}
-                height={720}
-                className={cn("object-contain w-full h-full", imageClass)}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                priority
-              />
+              {noNextImage ? (
+                <img
+                  src={imageSrc}
+                  alt={imageAlt || "section image"}
+                  className={cn("object-contain w-full h-full", imageClass)}
+                />
+              ) : (
+                <Image
+                  src={imageSrc}
+                  alt={imageAlt || "section image"}
+                  width={960}
+                  height={720}
+                  className={cn("object-contain w-full h-full", imageClass)}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                  priority
+                />
+              )}
             </div>
           ) : null}
         </div>
