@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/Ui/Navbar/Navbar";
+import Footer from "./components/Ui/Footer/Footer";
 
 // Inter font (for body text, paragraphs, etc.)
 const inter = Inter({
@@ -32,7 +34,9 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${montserrat.variable} antialiased`}
       >
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
