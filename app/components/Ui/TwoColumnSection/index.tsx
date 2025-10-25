@@ -62,7 +62,6 @@ const TwoColumnSection: React.FC<TwoColumnSectionProps> = ({
   listItem,
   listIcon,
   imageClassName,
-  borderRaduisImage,
   imageClass,
   noNextImage,
 }) => {

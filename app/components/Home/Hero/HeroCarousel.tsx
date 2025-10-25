@@ -26,15 +26,15 @@ export default function HeroCarousel() {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  // Auto-slide only for mobile
   useEffect(() => {
-    if (isMobile) {
-      const interval = setInterval(() => {
-        nextSlide();
-      }, 3000); // 3 seconds per slide
-      return () => clearInterval(interval);
-    }
-  }, [isMobile, current]);
+    if (!isMobile) return;
+
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [isMobile]);
 
   const nextSlide = () => {
     const next = (current + 1) % images.length;

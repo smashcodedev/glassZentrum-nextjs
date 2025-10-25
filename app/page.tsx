@@ -4,10 +4,8 @@ import ClaimAndGallery from "./components/Home/About/ClaimAndGallery";
 import ImageTextSection from "./components/Home/About/ImageTextSection";
 import EmergencyBanner from "./components/Home/Banner/EmergencyBanner";
 import GlassProjectSection from "./components/Home/Final/GlassPrjectSection";
-import Footer from "./components/Ui/Footer/Footer";
 import Hero from "./components/Home/Hero/Hero";
 import HeroSplit from "./components/Home/HeroSpilt/HeroSpilt";
-import Navbar from "./components/Ui/Navbar/Navbar";
 import Services from "./components/Home/Services/Services";
 
 export default function HomePage() {

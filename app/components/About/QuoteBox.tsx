@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { Quote } from "lucide-react";
 
 interface QuoteBoxProps {
   paragraphs?: string[];
@@ -18,6 +17,7 @@ const QuoteBox: React.FC<QuoteBoxProps> = ({ paragraphs = [] }) => {
         <div className="flex justify-start sm:justify-start mb-4">
           <img
             src="/images/quote.svg"
+            alt="quote"
             className="w-8 h-8 sm:w-8 sm:h-8 text-white"
           />
         </div>
