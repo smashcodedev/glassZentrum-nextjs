@@ -24,7 +24,7 @@ export default function ImageBanner({
         "relative w-full flex items-center justify-center text-center text-white overflow-hidden",
         // Refined heights – more subtle on large screens
         "h-[220px] sm:h-[280px] md:h-[340px] lg:h-[380px] xl:h-[420px]",
-        className
+        className,
       )}
     >
       {/* Background Image */}

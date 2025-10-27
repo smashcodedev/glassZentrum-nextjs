@@ -11,10 +11,10 @@ export default function EmergencyBanner() {
       highlight="This service is available to you 24/7"
       ctaLabel="Contact Us"
       onCta={() => alert("Calling emergency service...")}
-      bgColor="bg-[#2D2E83]"
+      bgColor="#2D2E83"
       textColor="white"
-      ctaBgColor="bg-white"
-      ctaTextColor="text-black"
+      ctaBgColor="#fff"
+      ctaTextColor="#000"
       borderRadius="rounded-3xl"
       shadow="shadow-xl"
       paddingY="py-8 sm:py-10 lg:py-12"
