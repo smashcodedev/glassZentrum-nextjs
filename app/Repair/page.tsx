@@ -1,4 +1,6 @@
+import BrandRepairCarousel from "../components/Repair/BrandCarousel";
 import BrokenGlass from "../components/Repair/BrokenGlass";
+import BrokenWindowPans from "../components/Repair/BrokenWindowPans";
 import EmergencyBanner from "../components/Repair/EmergencyBanner";
 import GlassRepair from "../components/Repair/GlassRepair";
 
@@ -7,6 +9,7 @@ import OurExperts from "../components/Repair/OurExperts";
 import PreventGlass from "../components/Repair/PreventGlass";
 import ProtectGlass from "../components/Repair/ProtectGlass";
 import RepairBanner from "../components/Repair/RepairAbout";
+import RepairVideo from "../components/Repair/RepairVideo";
 
 export default function Repair() {
   return (
@@ -19,6 +22,9 @@ export default function Repair() {
       <PreventGlass />
       <EmergencyBanner />
       <GlassRepair />
+      <BrandRepairCarousel />
+      <BrokenWindowPans />
+      <RepairVideo />
     </>
   );
 }
