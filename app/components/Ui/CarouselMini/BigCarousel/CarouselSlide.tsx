@@ -10,7 +10,7 @@ interface CarouselSlideProps {
 
 export const CarouselSlide: React.FC<CarouselSlideProps> = ({
   src,
-  alt = "",
+  alt = "image",
   isActive = false,
 }) => {
   return (

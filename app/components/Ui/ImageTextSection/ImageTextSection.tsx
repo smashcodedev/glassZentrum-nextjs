@@ -42,7 +42,6 @@ const ImageTextSection: React.FC<ImageTextSectionProps> = ({
   imageHeight,
   imageWidth,
   ctaHref,
-  imageNode,
   textNode,
   floatingCardNode,
   mobileCardNode,

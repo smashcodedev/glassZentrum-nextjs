@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import type EmblaOptionsType from "embla-carousel-react";
+import type { EmblaOptionsType } from "embla-carousel";
 import Autoplay from "embla-carousel-autoplay";
 
 export const useCarousel = (
@@ -8,9 +8,10 @@ export const useCarousel = (
   autoPlay = true,
   delay = 3000
 ) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, [
-    autoPlay ? Autoplay({ delay }) : undefined,
-  ]);
+  // Only include the Autoplay plugin if autoPlay is true
+  const plugins = autoPlay ? [Autoplay({ delay })] : [];
+
+  const [emblaRef, emblaApi] = useEmblaCarousel(options, plugins);
 
   useEffect(() => {
     if (!emblaApi) return;

@@ -1,4 +1,6 @@
 import BrokenGlass from "../components/Repair/BrokenGlass";
+import EmergencyBanner from "../components/Repair/EmergencyBanner";
+import GlassRepair from "../components/Repair/GlassRepair";
 
 import LongText from "../components/Repair/LongText";
 import OurExperts from "../components/Repair/OurExperts";
@@ -15,6 +17,8 @@ export default function Repair() {
       <LongText />
       <ProtectGlass />
       <PreventGlass />
+      <EmergencyBanner />
+      <GlassRepair />
     </>
   );
 }
