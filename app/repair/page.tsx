@@ -2,6 +2,7 @@ import BigCarousel from "../components/Repair/BigCarousel";
 import BrandRepairCarousel from "../components/Repair/BrandCarousel";
 import BrokenGlass from "../components/Repair/BrokenGlass";
 import BrokenWindowPans from "../components/Repair/BrokenWindowPans";
+import CardsSlider from "../components/Repair/CardsSlider";
 import DisposeGlass from "../components/Repair/DisposeGlass";
 import EmergencyBanner from "../components/Repair/EmergencyBanner";
 import EmergencyBannerGreen from "../components/Repair/EmergencyBannerGreen";
@@ -33,6 +34,7 @@ export default function Repair() {
       <EmergencyServices />
       <EmergencyBannerGreen />
       <BigCarousel />
+      <CardsSlider />
     </>
   );
 }
