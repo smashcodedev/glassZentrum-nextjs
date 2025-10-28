@@ -35,7 +35,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       {/* Attach both font variables */}
-      <body className={`${inter.variable} ${montserrat.variable} antialiased`}>
+      <body
+        className={`${inter.variable} ${montserrat.variable} antialiased`}
+        style={{ fontFamily: "var(--font-inter)" }}
+      >
         <Navbar />
         {children}
         <Footer />

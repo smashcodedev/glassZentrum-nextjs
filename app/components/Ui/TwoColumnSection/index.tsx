@@ -6,9 +6,10 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 export interface TwoColumnSectionProps {
-  textSectionHeight?: string; // e.g., "min-h-[500px]"
+  textSectionHeight?: string;
+  textSectionWidth?: string;
   eyebrow?: string;
-  eyebrowClassName?: string; // optional custom styles for eyebrow
+  eyebrowClassName?: string;
   heading?: string;
   headingClassName?: string; // optional custom heading styles
   paragraph?: string;
@@ -34,6 +35,7 @@ export interface TwoColumnSectionProps {
   borderRaduisImage?: string;
   imageClass?: string;
   noNextImage?: boolean;
+  paddingTop?: boolean;
 }
 
 const TwoColumnSection: React.FC<TwoColumnSectionProps> = ({
@@ -46,6 +48,7 @@ const TwoColumnSection: React.FC<TwoColumnSectionProps> = ({
   subParagraphs,
   subParagraphClassName,
   textSectionHeight,
+  textSectionWidth,
   ctaLabel,
   ctaHref,
   ctaClassName,
@@ -64,6 +67,7 @@ const TwoColumnSection: React.FC<TwoColumnSectionProps> = ({
   imageClassName,
   imageClass,
   noNextImage,
+  paddingTop,
 }) => {
   return (
     <section
@@ -76,7 +80,8 @@ const TwoColumnSection: React.FC<TwoColumnSectionProps> = ({
       <div
         className={cn(
           "max-w-[1250px] mx-auto flex flex-col lg:flex-row items-center gap-12",
-          reverse ? "lg:flex-row-reverse" : "lg:flex-row"
+          reverse ? "lg:flex-row-reverse" : "lg:flex-row",
+          paddingTop ? "pt-20" : ""
         )}
       >
         {/* Image Section */}
@@ -86,7 +91,7 @@ const TwoColumnSection: React.FC<TwoColumnSectionProps> = ({
           ) : imageSrc ? (
             <div
               className={cn(
-                "overflow-hidden flex-shrink-0 rounded-3xl",
+                "overflow-hidden flex-shrink-0 rounded-6xl bg-transparent",
                 imageWidth,
                 imageHeight,
                 imageClassName
@@ -115,7 +120,11 @@ const TwoColumnSection: React.FC<TwoColumnSectionProps> = ({
 
         {/* Text Section */}
         <div
-          className={cn("flex-1 text-center lg:text-left", textSectionHeight)}
+          className={cn(
+            "flex-1 text-center lg:text-left",
+            textSectionHeight,
+            textSectionWidth
+          )}
         >
           {children ? (
             children

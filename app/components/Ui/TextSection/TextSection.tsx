@@ -12,6 +12,8 @@ interface TextSectionProps {
   titleClass?: string;
   paragraphClass?: string;
   buttonClass?: string;
+  textSectionWide?: boolean;
+  paddingLarge?: boolean;
 }
 
 const TextSection: React.FC<TextSectionProps> = ({
@@ -24,19 +26,31 @@ const TextSection: React.FC<TextSectionProps> = ({
   titleClass = "",
   paragraphClass = "",
   buttonClass = "",
+  textSectionWide,
+  paddingLarge,
 }) => {
   return (
     <section className={`w-full bg-white ${paddingClass} ${sectionClass}`}>
-      <div className="max-w-[1250px] mx-auto grid grid-cols-1 md:grid-cols-[1fr_1fr] items-center gap-10 lg:gap-18">
+      <div
+        className={`max-w-[1250px] mx-auto grid grid-cols-1 ${
+          textSectionWide
+            ? "md:grid-cols-[1.5fr_1fr]"
+            : "md:grid-cols-[1fr_1fr]"
+        }  items-center gap-10 lg:gap-18`}
+      >
         <div className="flex justify-center items-center text-center md:text-left">
           <h2
-            className={`text-4xl sm:text-5xl lg:text-5xl font-bold text-gray-900 leading-tight ${titleClass}`}
+            className={`text-4xl sm:text-5xl lg:text-5xl font-semibold text-[#0B1024] leading-tight ${titleClass}`}
           >
             {title}
           </h2>
         </div>
 
-        <div className="flex flex-col justify-center items-center md:items-start gap-6 w-full lg:pl-20">
+        <div
+          className={`flex flex-col justify-center items-center md:items-start text-left gap-6 w-full   ${
+            paddingLarge ? "lg:pl-[10rem]" : "lg:pl-20 "
+          }`}
+        >
           <p
             className={`text-gray-600 text-base sm:text-lg leading-relaxed text-center md:text-left w-full ${paragraphClass}`}
           >

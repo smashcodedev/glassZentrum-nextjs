@@ -7,7 +7,7 @@ interface ImageTextSectionProps {
   imageSrc: string;
   imageAlt?: string;
   paragraphs: string[];
-  buttonText: string;
+  buttonText?: string;
   onButtonClick?: () => void;
   paddingClass?: string;
 
@@ -23,7 +23,7 @@ const BigImageComponent: React.FC<ImageTextSectionProps> = ({
   paragraphs,
   buttonText,
   onButtonClick,
-  paddingClass = "py-2 px-6 sm:px-10 lg:px-20",
+  paddingClass = "py-6 lg:pb-10 px-6 sm:px-10 lg:px-20",
   sectionClass = "",
   imageClass = "",
   paragraphClass = "",
@@ -55,12 +55,14 @@ const BigImageComponent: React.FC<ImageTextSectionProps> = ({
           ))}
         </div>
 
-        <button
-          onClick={onButtonClick}
-          className={`bg-blue-600 text-white px-6 py-3 rounded-full font-medium hover:bg-blue-700 transition-all duration-200 ${buttonClass}`}
-        >
-          {buttonText}
-        </button>
+        {buttonText && (
+          <button
+            onClick={onButtonClick}
+            className={`bg-blue-600 text-white px-6 py-3 rounded-full font-medium hover:bg-blue-700 transition-all duration-200 ${buttonClass}`}
+          >
+            {buttonText}
+          </button>
+        )}
       </div>
     </section>
   );
