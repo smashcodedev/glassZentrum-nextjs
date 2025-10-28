@@ -4,7 +4,7 @@ import BigImageComponent from "../Ui/BigImage/BigImageComponent";
 export default function GlassMirror() {
   return (
     <BigImageComponent
-      imageSrc="/images/mirror/mirror.jpg"
+      imageSrc="/images/mirror/win.jpg"
       paragraphs={[
         "Glass mirrors are an important part of our daily life. They are used in our homes, offices, cars and even on roads for traffic monitoring. Glass mirrors can serve a variety of functions, from enhancing natural light in a room to increasing the sense of space.",
         "The history of glass mirrors goes back thousands of years. The first mirrors were made of polished metal, but later glass mirrors were also used. In the Middle Ages, glass mirrors were a sign of wealth and power and were often used in palaces and castles.",
