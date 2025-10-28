@@ -1,7 +1,9 @@
 import BrandRepairCarousel from "../components/Repair/BrandCarousel";
 import BrokenGlass from "../components/Repair/BrokenGlass";
 import BrokenWindowPans from "../components/Repair/BrokenWindowPans";
+import DisposeGlass from "../components/Repair/DisposeGlass";
 import EmergencyBanner from "../components/Repair/EmergencyBanner";
+import EmergencyServices from "../components/Repair/EmergencyServices";
 import GlassRepair from "../components/Repair/GlassRepair";
 
 import LongText from "../components/Repair/LongText";
@@ -25,6 +27,8 @@ export default function Repair() {
       <BrandRepairCarousel />
       <BrokenWindowPans />
       <RepairVideo />
+      <DisposeGlass />
+      <EmergencyServices />
     </>
   );
 }
