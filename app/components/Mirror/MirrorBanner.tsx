@@ -4,7 +4,7 @@ export default function MirrorBanner() {
   return (
     <ImageBanner
       title="Glass Made Mirror"
-      imageSrc="/images/mirror/glass.png"
+      imageSrc="/images/glass.png"
     />
   );
 }
