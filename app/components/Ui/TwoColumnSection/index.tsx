@@ -56,7 +56,7 @@ const TwoColumnSection: React.FC<TwoColumnSectionProps> = ({
   imageAlt,
   reverse = false,
   bgColor = "bg-[#f6f9ff]",
-  imageWidth = "w-[550px] sm:w-[650px] md:w-[580px] lg:w-[600px]",
+  imageWidth = "w-[550px] sm:w-[550px] md:w-[580px] lg:w-[600px]",
   children,
   imageContent,
   className,

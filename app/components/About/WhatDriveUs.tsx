@@ -20,7 +20,7 @@ export default function WhatDriveUs() {
       paragraphClassName="text-[#EBEBEB] pt-4"
       subParagraphClassName="text-[#EBEBEB]"
       ctaClassName="bg-white text-black mt-10"
-      imageWidth="sm:w-[670px] w-[670px]"
+      imageWidth="sm:w-[600px] w-[600px] translate-x-3"
     />
   );
 }
