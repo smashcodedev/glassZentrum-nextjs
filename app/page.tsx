@@ -20,17 +20,13 @@ export default function HomePage() {
           }}
         />
 
-        <HeroSplit />
+        <HeroSplit imageSrc="/images/home/shelf.png" />
       </section>
 
       <section className="bg-white">
-        <ImageTextSection
-          imageSrc="/images/building.jpg"
-        />
-
-        <ClaimAndGallery heading="Custom-made glass – our claim and promise" />
+        <ImageTextSection imageSrc="/images/building.jpg" />
       </section>
-
+      <ClaimAndGallery heading="Custom-made glass – our claim and promise" />
       <GlassProjectSection />
     </>
   );

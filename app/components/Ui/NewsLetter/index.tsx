@@ -11,7 +11,7 @@ export default function NewsletterSection({
 }) {
   return (
     <section
-      className="w-full flex justify-center px-4 sm:px-6 md:px-10 lg:px-20 py-10 sm:py-14 md:py-16"
+      className="w-full flex justify-center px-4 sm:px-6 md:px-10 lg:px-20 py-10 sm:py-14 md:py-10"
       style={{ backgroundColor: bgColor }}
     >
       <div className="w-full max-w-[1200px] flex flex-col md:flex-row items-center justify-between gap-8 sm:gap-10">

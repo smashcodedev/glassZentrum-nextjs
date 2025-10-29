@@ -32,6 +32,8 @@ export interface ImageTextSectionProps {
   bgColor?: string;
   paddingY?: string;
   paddingX?: string;
+  titleClassName?: string;
+  floatingClass?: string;
 }
 
 const ImageTextSection: React.FC<ImageTextSectionProps> = ({
@@ -55,6 +57,8 @@ const ImageTextSection: React.FC<ImageTextSectionProps> = ({
   paddingY = "py-12",
   paddingX = "px-6 sm:px-8 lg:px-12",
   imageSrc,
+  titleClassName,
+  floatingClass,
 }) => {
   return (
     <section
@@ -68,7 +72,7 @@ const ImageTextSection: React.FC<ImageTextSectionProps> = ({
           {floatingCardNode ?? (
             <div
               className={cn(
-                "bg-white w-[714px] h-[7.5rem] rounded-[20px] shadow-lg p-[6rem] pl-8 max-w-[1250px] mx-auto flex items-center"
+                `bg-white w-[714px] h-[7.5rem] rounded-[20px] shadow-lg p-[6rem] pl-8 max-w-[1250px] mx-auto flex items-center ${floatingClass}`
               )}
             >
               <div>
@@ -82,7 +86,7 @@ const ImageTextSection: React.FC<ImageTextSectionProps> = ({
                 )}
                 {title && (
                   <h3
-                    className="text-lg sm:text-xl md:text-4xl font-semibold text-[#0f1724]"
+                    className={`text-lg sm:text-xl md:text-4xl font-semibold text-[#0f1724] ${titleClassName}`}
                     style={{ fontFamily: "var(--font-inter)" }}
                   >
                     {title}
@@ -174,7 +178,7 @@ const ImageTextSection: React.FC<ImageTextSectionProps> = ({
                   </div>
                 )}
                 {title && (
-                  <h3 className="text-base font-semibold text-[#0f1724]">
+                  <h3 className={`text-base font-semibold text-[#0f1724]`}>
                     {title}
                   </h3>
                 )}

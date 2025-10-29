@@ -17,7 +17,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
       <div className="max-w-[1250px] mx-auto px-6 sm:px-8 xl:px-0">
         <header className="text-center mb-12 sm:mb-16">
           <h2
-            className="text-3xl sm:text-4xl md:text-5xl font-medium text-[#101826] leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#101826] leading-tight"
             style={{ fontFamily: "var(--font-inter)" }}
           >
             {title}
@@ -30,7 +30,6 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
           </p>
         </header>
 
-        {/* Grid */}
         <div
           className="
             grid gap-8 

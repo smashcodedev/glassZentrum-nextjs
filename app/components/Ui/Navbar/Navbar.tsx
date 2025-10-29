@@ -37,10 +37,11 @@ const navLinks = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState<string | null>(null);
-  const [mobileDropdownOpen, setMobileDropdownOpen] = useState<string | null>(null);
+  const [mobileDropdownOpen, setMobileDropdownOpen] = useState<string | null>(
+    null
+  );
   const [scrolled, setScrolled] = useState(false);
 
-  // Listen to scroll
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 20) {
@@ -72,12 +73,11 @@ export default function Navbar() {
             <li key={link.name} className="relative">
               {link.dropdown ? (
                 <div
+                  className="relative"
                   onMouseEnter={() => setDropdownOpen(link.name)}
                   onMouseLeave={() => setDropdownOpen(null)}
                 >
-                  <button
-                    className="flex items-center gap-1 text-gray-700 hover:text-[#2B237C] transition duration-300 font-[var(--font-inter)] font-medium text-[16px] leading-[24px]"
-                  >
+                  <button className="flex items-center gap-1 text-gray-700 hover:text-[#2B237C] transition duration-300 font-[var(--font-inter)] font-medium text-[16px] leading-[24px]">
                     {link.name}
                     <ChevronDown
                       size={16}
@@ -89,7 +89,7 @@ export default function Navbar() {
 
                   {/* Dropdown */}
                   <ul
-                    className={`absolute top-full left-0 mt-2 bg-white shadow-lg rounded-lg py-2 w-52 flex flex-col gap-1 transition-all duration-300 transform origin-top ${
+                    className={`absolute top-full left-0 mt-0 bg-white shadow-lg rounded-lg py-2 w-52 flex flex-col gap-1 transition-all duration-300 transform origin-top ${
                       dropdownOpen === link.name
                         ? "scale-y-100 opacity-100"
                         : "scale-y-0 opacity-0 pointer-events-none"
@@ -110,7 +110,8 @@ export default function Navbar() {
               ) : (
                 <Link
                   href={link.href}
-                  className="text-gray-700 hover:text-[#2B237C] transition duration-300 font-[var(--font-inter)] font-medium text-[16px] leading-[24px]"
+                  className="text-gray-700 hover:text-[#2B237C] transition duration-300 font-semibold text-[16px] leading-[24px]"
+                  style={{ fontFamily: "var(--font-inter)" }}
                 >
                   {link.name}
                 </Link>

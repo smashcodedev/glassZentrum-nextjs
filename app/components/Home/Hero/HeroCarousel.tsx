@@ -6,10 +6,10 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const images = [
-  "/images/hero-main.jpg",
-  "/images/thumb-1.jpg",
-  "/images/thumb-2.jpg",
-  "/images/thumb-4.jpg",
+  "/images/home/slide1.png",
+  "/images/home/slide2.png",
+  "/images/home/slide3.png",
+  "/images/home/slide4.png",
 ];
 
 export default function HeroCarousel() {
