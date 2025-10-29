@@ -11,7 +11,7 @@ export default function GlassProjectSection({
   ctaHref = "#",
 }) {
   return (
-    <section className="w-full bg-[#f6f8fb] py-20 sm:py-28 px-4 sm:px-6 lg:px-12">
+    <section className="w-full bg-[#f6f8fb] py-20 sm:pb-10 sm:py-28 px-4 sm:px-6 lg:px-12">
       <div className="max-w-[1250px] mx-auto relative">
         {/* ===== DESKTOP VIEW ===== */}
         <div className="hidden lg:grid grid-cols-12 items-start gap-10 lg:gap-10 relative">
@@ -112,7 +112,7 @@ export default function GlassProjectSection({
           {/* IMAGES IN A ROW */}
           <div className="flex justify-center gap-4 w-full">
             {/* Left image */}
-            <div className="rounded-2xl overflow-hidden shadow-lg w-[45%] sm:w-[42%]">
+            <div className="rounded-2xl overflow-hidden shadow-lg w-[50%] sm:w-[50%]">
               <Image
                 src={leftImage}
                 alt="Technician working on glass"
@@ -124,7 +124,7 @@ export default function GlassProjectSection({
             </div>
 
             {/* Center image */}
-            <div className="rounded-2xl overflow-hidden shadow-lg w-[45%] sm:w-[42%]">
+            <div className="rounded-2xl overflow-hidden shadow-lg w-[50%] sm:w-[50%]">
               <Image
                 src={centerImage}
                 alt="Man cleaning mirror"

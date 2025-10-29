@@ -72,27 +72,28 @@ const ImageTextSection: React.FC<ImageTextSectionProps> = ({
             <div
               className="
     absolute 
-    z-10 
+    z-20 
     flex md:hidden 
-    justify-center 
+    justify-start 
     w-full 
     pointer-events-none 
-    top-[2.5rem]
-    left-1/2 -translate-x-[60%]
+    top-[1.5rem] sm:top-[2rem] 
+    left-[1rem] sm:left-[1.5rem]
   "
             >
               <div
+                tabIndex={0}
                 className="
       bg-white 
       rounded-xl sm:rounded-2xl 
       shadow-[0px_6px_12px_rgba(0,0,0,0.08)] 
       px-4 sm:px-6 py-3 sm:py-4 
-      w-[88%] sm:w-[85%] 
-      max-w-[480px] 
+      w-[85%] sm:w-[70%] 
+      max-w-[360px] 
       flex flex-col items-start 
-      scale-[0.95] sm:scale-100 
-      pointer-events-auto
-      transition-all duration-300
+      pointer-events-auto 
+      transition-transform duration-300 
+      focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2D2E83]
     "
               >
                 <div>
@@ -115,7 +116,7 @@ const ImageTextSection: React.FC<ImageTextSectionProps> = ({
         </div>
 
         {/* Right Text */}
-        <div className="order-last lg:order-last lg:pt-[15rem] -translate-x-10">
+        <div className="order-last lg:order-last lg:pt-[15rem] -translate-x-0 lg:-translate-x-10">
           <div
             className="max-w-[580px] lg:max-w-[540px] mx-auto lg:mx-0"
             style={{ fontFamily: "var(--font-inter)" }}

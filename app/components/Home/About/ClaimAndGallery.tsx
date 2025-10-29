@@ -22,7 +22,7 @@ const ClaimAndGallery: React.FC<ClaimAndGalleryProps> = ({
   imageAlt = "Our team working on custom glass pieces",
 }) => {
   return (
-    <section className="w-full bg-[#f6f8fb] px-6 sm:px-8 lg:px-12 py-12 relative">
+    <section className="w-full bg-[#f6f8fb] px-6 sm:px-8 lg:px-12 py-0 lg:py-12 relative">
       <div className="max-w-[1250px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Text Side - Left */}
         <div className="text-center lg:text-left order-2 lg:order-1">

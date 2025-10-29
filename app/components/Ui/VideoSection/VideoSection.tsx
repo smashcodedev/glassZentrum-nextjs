@@ -27,7 +27,7 @@ const VideoSection: React.FC<VideoSectionProps> = ({
   overlayOpacity,
   className,
   maxTextWidth = "max-w-full sm:max-w-[700px] md:max-w-[850px] lg:max-w-[950px] xl:max-w-[1100px]",
-  imageWidth = "w-full sm:w-[85%] md:w-[75%] lg:w-[70%] xl:w-[65%]",
+  imageWidth = "w-full sm:w-full md:w-[75%] lg:w-[70%] xl:w-[65%]",
   borderRadius = "rounded-[2.5rem]",
 }) => {
   return (

@@ -24,7 +24,7 @@ export default function WeWantBanner() {
       titleClassName="text-4xl sm:text-4xl font-bold text-black"
       subtitleClassName="text-[#737780] text-base sm:text-md"
       paragraphClassName="text-[#737780] text-base sm:text-md leading-relaxed -translate-y-6"
-      padding="py-20 px-8 lg:px-24 lg:pb-10 sm:px-12"
+      padding="py-6 px-8 lg:px-24 lg:pb-10 sm:px-12"
       maxWidth="max-w-[1250px]"
       shadow="shadow-sm"
       showCta={false}

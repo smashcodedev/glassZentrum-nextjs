@@ -13,7 +13,7 @@ export default function WhoWeAre() {
       ]}
       ctaHref="/contact"
       imageSrc="/images/about/whatweare.jpg"
-      imageHeight="h-[450px] sm:h-[520px] lg:h-[650px]"
+      imageHeight="lg:h-[650px]"
       className="overflow-visible"
     />
   );

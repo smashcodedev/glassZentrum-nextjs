@@ -56,7 +56,7 @@ export default function NewsletterSection({
               style={{ fontFamily: "var(--font-inter)" }}
             />
             <button
-              className="absolute right-[12px] lg:right-[5px] sm:right-[20px] top-1/2 -translate-y-1/2 
+              className="absolute right-[4px] lg:right-[5px] sm:right-[4px] top-1/2 -translate-y-1/2 
                          bg-green-600 text-white px-5 sm:px-7 py-2 sm:py-2.5 rounded-full 
                          text-sm sm:text-base font-medium hover:bg-green-700 transition-all"
               style={{ fontFamily: "var(--font-inter)" }}
