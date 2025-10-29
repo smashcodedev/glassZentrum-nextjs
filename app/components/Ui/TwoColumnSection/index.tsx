@@ -163,7 +163,7 @@ const TwoColumnSection: React.FC<TwoColumnSectionProps> = ({
                     "text-[#585C67] font-normal text-base sm:text-lg lg:text-[19px] mb-5 max-w-[600px] mx-auto lg:mx-0 leading-relaxed",
                     paragraphClassName
                   )}
-                  style={{ fontFamily: "var(--font-inter)" }}
+                  style={{ fontFamily: "var(--font-lato)" }}
                 >
                   {paragraph}
                 </p>
@@ -178,7 +178,7 @@ const TwoColumnSection: React.FC<TwoColumnSectionProps> = ({
                       "text-[#585C67] font-normal text-base sm:text-lg lg:text-[19px] mb-5 max-w-[600px] mx-auto lg:mx-0 leading-relaxed",
                       subParagraphClassName
                     )}
-                    style={{ fontFamily: "var(--font-inter)" }}
+                    style={{ fontFamily: "var(--font-lato)" }}
                   >
                     {p}
                   </p>

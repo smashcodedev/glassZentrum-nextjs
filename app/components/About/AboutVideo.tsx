@@ -11,6 +11,7 @@ export default function AboutVideo() {
       borderRadius="rounded-[2.5rem]"
       imageWidth="w-full sm:w-[80%] md:w-[75%]"
       maxTextWidth="max-w-[1100px]"
+      className="bg-[#f9f8ff]"
     />
   );
 }

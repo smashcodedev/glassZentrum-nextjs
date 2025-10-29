@@ -10,7 +10,7 @@ const QuoteBox: React.FC<QuoteBoxProps> = ({ paragraphs = [] }) => {
   return (
     <div className="relative w-full">
       <div
-        className="mx-auto w-full max-w-[950px] bg-[#009636] text-white rounded-[36px] shadow-lg px-6 py-8 sm:px-10 sm:py-12"
+        className="mx-auto w-full max-w-[950px] bg-[#009636] text-[#F7F7F7] rounded-[36px] shadow-lg px-6 py-8 sm:px-10 sm:py-12"
         style={{ zIndex: 1 }}
       >
         {/* Quote icon aligned left on large screens, centered on small */}
@@ -18,7 +18,7 @@ const QuoteBox: React.FC<QuoteBoxProps> = ({ paragraphs = [] }) => {
           <img
             src="/images/quote.svg"
             alt="quote"
-            className="w-8 h-8 sm:w-8 sm:h-8 text-white"
+            className="w-8 h-8 sm:w-8 sm:h-8 text-[#F7F7F7]"
           />
         </div>
 

@@ -50,7 +50,7 @@ export default function NewsletterSection({
             <input
               type="email"
               placeholder="Enter your email"
-              className="w-[95%] sm:w-[90%] py-3.5 sm:py-4 pl-5 sm:pl-6 pr-[120px] sm:pr-[135px] 
+              className="w-[95%] placeholder:font-black placeholder:text-black sm:w-[90%] py-3.5 sm:py-4 pl-5 sm:pl-6 pr-[120px] sm:pr-[135px] 
                          rounded-full bg-[#F5F5F5] focus:outline-none text-gray-700 
                          text-sm sm:text-base shadow-sm"
               style={{ fontFamily: "var(--font-inter)" }}

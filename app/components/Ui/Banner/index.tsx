@@ -90,7 +90,7 @@ const Banner: React.FC<BannerProps> = ({
 
   showCta = true,
   className,
-  children
+  children,
 }) => {
   const normalizedRadiusClass = (() => {
     if (!borderRadius) return "rounded-2xl";
@@ -105,7 +105,7 @@ const Banner: React.FC<BannerProps> = ({
 
   return (
     <div
-      className={`w-full flex justify-center px-4 sm:px-6 ${className || ""}`}
+      className={`w-full flex justify-center px-10 sm:px-6 ${className || ""}`}
     >
       <div
         className={[
@@ -153,7 +153,7 @@ const Banner: React.FC<BannerProps> = ({
           {/* Subtitle */}
           {subtitle && (
             <p
-              className={`text-sm sm:text-base md:text-md text-gray-700 ${
+              className={`text-sm sm:text-base md:text-md text-[#737780] font-normal ${
                 subtitleClassName || ""
               }`}
               style={{ fontFamily: "var(--font-inter)" }}
@@ -178,7 +178,7 @@ const Banner: React.FC<BannerProps> = ({
               {subParagraphs.map((p, i) => (
                 <p
                   key={i}
-                  className={`text-sm sm:text-base md:text-md text-gray-600 leading-relaxed break-words ${
+                  className={`text-sm sm:text-base md:text-md text-[#737780] leading-relaxed break-words ${
                     paragraphClassName || ""
                   }`}
                   style={{ fontFamily: "var(--font-inter)" }}

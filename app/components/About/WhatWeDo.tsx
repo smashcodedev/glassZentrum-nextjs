@@ -14,6 +14,7 @@ Visit the Glass Center North in the Handworker Ottesen. You will find the glass
       ctaLabel="Contact Us"
       ctaHref="/contact"
       imageSrc="/images/about/do.png"
+      className="lg:!pb-20"
     />
   );
 }

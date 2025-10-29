@@ -12,9 +12,10 @@ export interface VideoSectionProps {
   imageHeight?: string;
   overlayOpacity?: string;
   className?: string;
-  maxTextWidth?: string; // text width max
-  imageWidth?: string; // image width
-  borderRadius?: string; // image rounding
+  maxTextWidth?: string;
+  imageWidth?: string; 
+  borderRadius?: string; 
+  background?:string
 }
 
 const VideoSection: React.FC<VideoSectionProps> = ({
