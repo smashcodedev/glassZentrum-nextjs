@@ -4,7 +4,7 @@ export default function WeWantBanner() {
   return (
     <Banner
       borderRadiusPx="30px"
-      className="-translate-y-[9rem]"
+      className="-translate-y-[13rem] lg:-translate-y-[9rem] !px-4 lg:!px-10"
       title="We Want"
       subtitle="We only want to carry out and implement projects that we are really convinced of."
       subParagraphs={[

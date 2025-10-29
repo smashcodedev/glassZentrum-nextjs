@@ -24,8 +24,8 @@ const SummarySection: React.FC<SummarySectionProps> = ({
       className="
         relative w-full flex justify-center 
         px-4 sm:px-6 lg:px-8 
-        -translate-y-28 
-        py-12 sm:py-14 md:py-16 
+        -translate-y-[12rem] 
+        py-12 pb-0 sm:py-14 md:py-16 
         bg-[#f8f9ff] overflow-hidden 
         lg:-translate-y-14 lg:py-0 lg:pb-16
       "

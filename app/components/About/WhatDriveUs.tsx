@@ -14,13 +14,13 @@ export default function WhatDriveUs() {
       ctaHref="/contact"
       imageSrc="/images/about/drive.png"
       imageHeight="h-[450px] sm:h-[520px] lg:h-[650px]"
-      textSectionHeight="lg:pb-0 pb-10 -translate-y-10 lg:-translate-y-0"
+      textSectionHeight="lg:pb-0 pb-10 -translate-y-28 lg:-translate-y-0"
       className="overflow-visible  pt-10 lg:!pt-0 mt-0 !pb-[10rem]"
       headingClassName="text-white"
       paragraphClassName="text-[#EBEBEB] pt-4"
       subParagraphClassName="text-[#EBEBEB]"
       ctaClassName="bg-white text-black mt-10"
-      imageWidth="sm:w-[600px] w-[600px] translate-x-3"
+      imageWidth="sm:w-[600px] w-[390px] translate-x-2 lg:translate-x-0 -translate-y-10 lg:-translate-y-10"
     />
   );
 }

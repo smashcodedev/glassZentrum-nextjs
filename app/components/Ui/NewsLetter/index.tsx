@@ -11,7 +11,7 @@ export default function NewsletterSection({
 }) {
   return (
     <section
-      className="w-full flex justify-center px-4 sm:px-6 md:px-10 lg:px-20 py-10 sm:py-14 md:py-10"
+      className=" w-full flex justify-center px-4 sm:px-6 md:px-10 lg:px-20 py-10 sm:py-14 md:py-10"
       style={{ backgroundColor: bgColor }}
     >
       <div className="w-full max-w-[1200px] flex flex-col md:flex-row items-center justify-between gap-8 sm:gap-10">
@@ -56,7 +56,7 @@ export default function NewsletterSection({
               style={{ fontFamily: "var(--font-inter)" }}
             />
             <button
-              className="absolute right-[4px] lg:right-[5px] sm:right-[4px] top-1/2 -translate-y-1/2 
+              className="absolute right-[14px] lg:right-[5px] sm:right-[4px] top-1/2 -translate-y-1/2 
                          bg-green-600 text-white px-5 sm:px-7 py-2 sm:py-2.5 rounded-full 
                          text-sm sm:text-base font-medium hover:bg-green-700 transition-all"
               style={{ fontFamily: "var(--font-inter)" }}
