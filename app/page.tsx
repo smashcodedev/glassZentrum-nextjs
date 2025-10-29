@@ -20,7 +20,7 @@ export default function HomePage() {
           }}
         />
 
-        <HeroSplit imageSrc="/images/home/shelf.png" />
+        <HeroSplit imageSrc="/images/shelf.png" />
       </section>
 
       <section className="bg-white">

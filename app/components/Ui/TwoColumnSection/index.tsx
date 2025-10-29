@@ -56,7 +56,7 @@ const TwoColumnSection: React.FC<TwoColumnSectionProps> = ({
   imageAlt,
   reverse = false,
   bgColor = "bg-[#f6f9ff]",
-  imageWidth = "w-[400px] sm:w-[500px] md:w-[580px] lg:w-[600px]",
+  imageWidth = "w-[550px] sm:w-[650px] md:w-[580px] lg:w-[600px]",
   children,
   imageContent,
   className,
@@ -160,7 +160,7 @@ const TwoColumnSection: React.FC<TwoColumnSectionProps> = ({
               {paragraph && (
                 <p
                   className={cn(
-                    "text-[#585C67] font-normal text-base sm:text-lg lg:text-[19px] mb-5 max-w-[600px] mx-auto lg:mx-0 leading-relaxed",
+                    "text-[#585C67] font-normal text-base sm:text-lg lg:text-[19px] mb-5 max-w-[800px] lg:max-w-[600px] mx-auto lg:mx-0 leading-relaxed",
                     paragraphClassName
                   )}
                   style={{ fontFamily: "var(--font-lato)" }}
