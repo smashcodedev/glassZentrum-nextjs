@@ -49,7 +49,7 @@ const ClaimAndGallery: React.FC<ClaimAndGalleryProps> = ({
 
         {/* Image Side - Right */}
         <div className="flex justify-center lg:justify-end order-1 lg:order-2 lg:pr-4">
-          <div className=" overflow-hidden  w-[450px] sm:w-[450px] md:w-[460px] lg:w-[520px] flex-shrink-0">
+          <div className=" overflow-hidden  w-[310px] sm:w-[400px] md:w-[460px] lg:w-[520px] flex-shrink-0">
             <Image
               src={imageSrc}
               alt={imageAlt}
