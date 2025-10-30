@@ -56,7 +56,7 @@ const TwoColumnSection: React.FC<TwoColumnSectionProps> = ({
   imageAlt,
   reverse = false,
   bgColor = "bg-[#f6f9ff]",
-  imageWidth = "w-[321px] sm:w-[550px] md:w-[580px] lg:w-[600px]",
+  imageWidth = "w-[370px] sm:w-[550px] md:w-[580px] lg:w-[600px]",
   children,
   imageContent,
   className,
@@ -85,7 +85,7 @@ const TwoColumnSection: React.FC<TwoColumnSectionProps> = ({
         )}
       >
         {/* Image Section */}
-        <div className="flex-1 flex justify-center lg:justify-end">
+        {/* <div className="flex-1 flex justify-center lg:justify-end">
           {imageContent ? (
             <>{imageContent}</>
           ) : imageSrc ? (
@@ -111,6 +111,73 @@ const TwoColumnSection: React.FC<TwoColumnSectionProps> = ({
                   height={720}
                   className={cn("object-contain w-full h-full", imageClass)}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                  priority
+                />
+              )}
+            </div>
+          ) : null}
+        </div> */}
+        {/* Image Section */}
+        {/* ✅ MOBILE VERSION (only visible below lg) */}
+        <div className="flex-1 flex justify-center lg:hidden">
+          {imageContent ? (
+            <>{imageContent}</>
+          ) : imageSrc ? (
+            <div
+              className={cn(
+                "relative w-full flex-shrink-0 overflow-hidden rounded-2xl bg-transparent",
+                "max-w-[86vw] sm:max-w-[96vw] md:max-w-[98vw]",
+                imageClassName
+              )}
+              style={{ aspectRatio: "16 / 11", minHeight: "260px" }}
+            >
+              {noNextImage ? (
+                <img
+                  src={imageSrc}
+                  alt={imageAlt || "section image"}
+                  className={cn("object-cover w-full h-full", imageClass)}
+                />
+              ) : (
+                <Image
+                  src={imageSrc}
+                  alt={imageAlt || "section image"}
+                  fill
+                  className={cn("object-cover", imageClass)}
+                  sizes="(max-width: 360px) 95vw, (max-width: 480px) 90vw, (max-width: 768px) 70vw, 580px"
+                  priority
+                />
+              )}
+            </div>
+          ) : null}
+        </div>
+
+        {/* ✅ DESKTOP VERSION (hidden on mobile) */}
+        <div className="hidden lg:flex flex-1 justify-center lg:justify-end">
+          {imageContent ? (
+            <>{imageContent}</>
+          ) : imageSrc ? (
+            <div
+              className={cn(
+                "overflow-hidden flex-shrink-0 rounded-6xl bg-transparent",
+                imageWidth,
+                imageHeight,
+                imageClassName
+              )}
+            >
+              {noNextImage ? (
+                <img
+                  src={imageSrc}
+                  alt={imageAlt || "section image"}
+                  className={cn("object-contain w-full h-full", imageClass)}
+                />
+              ) : (
+                <Image
+                  src={imageSrc}
+                  alt={imageAlt || "section image"}
+                  width={960}
+                  height={720}
+                  className={cn("object-contain w-full h-full", imageClass)}
+                  sizes="(max-width: 1200px) 50vw, 600px"
                   priority
                 />
               )}

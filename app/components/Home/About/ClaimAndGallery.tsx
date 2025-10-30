@@ -28,7 +28,7 @@ const ClaimAndGallery: React.FC<ClaimAndGalleryProps> = ({
         <div className="text-center lg:text-left order-2 lg:order-1">
           <h2
             className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#0f1724] leading-snug mb-5"
-           style={{ fontFamily: "var(--font-inter)" }}
+            style={{ fontFamily: "var(--font-inter)" }}
           >
             {heading}
           </h2>
@@ -49,14 +49,22 @@ const ClaimAndGallery: React.FC<ClaimAndGalleryProps> = ({
 
         {/* Image Side - Right */}
         <div className="flex justify-center lg:justify-end order-1 lg:order-2 lg:pr-4">
-          <div className=" overflow-hidden  w-[310px] sm:w-[400px] md:w-[460px] lg:w-[520px] flex-shrink-0">
+          <div
+            className="
+      w-full
+      max-w-[360px] sm:max-w-[440px] md:max-w-[500px] lg:max-w-[560px]
+      flex-shrink-0
+      overflow-hidden
+      rounded-xl
+    "
+          >
             <Image
               src={imageSrc}
-              alt={imageAlt}
+              alt={imageAlt || ""}
               width={960}
               height={720}
-              className="object-cover w-full h-full"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 520px"
+              className="object-cover w-full h-auto"
+              sizes="(max-width: 400px) 100vw, (max-width: 768px) 95vw, (max-width: 1200px) 50vw, 560px"
               priority
             />
           </div>

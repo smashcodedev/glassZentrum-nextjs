@@ -52,7 +52,7 @@ const VideoSection: React.FC<VideoSectionProps> = ({
       {/* Image */}
       <div
         className={cn(
-          "relative overflow-hidden  aspect-[16/9] max-w-[1250px] w-full",
+          "relative overflow-hidden  w-[50%] aspect-[16/9] max-w-[1250px] lg:w-full",
           imageWidth,
           imageHeight,
           borderRadius

@@ -72,7 +72,7 @@ export default function HeroCarousel() {
             src={images[current]}
             alt={`Slide ${current}`}
             fill
-            className="object-cover"
+            className="object-cover rounded-sm lg:rounded-none"
             priority
           />
         </motion.div>

@@ -24,7 +24,7 @@ const HeroSplit: React.FC<HeroSplitProps> = ({
         {/* Left: Text Content */}
         <div className="flex-[0.9] text-center lg:text-left max-w-[2xl]">
           <h2
-            className="font-semibold text-[#0E0E2C] text-3xl lg:text-[42px] leading-tight lg:leading-[52px] capitalize mb-6"
+            className="font-semibold text-[#0E0E2C] text-[26px] lg:text-[42px] leading-tight lg:leading-[52px] capitalize mb-6"
             style={{ fontFamily: "var(--font-montserrat)" }}
           >
             {title}

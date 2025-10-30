@@ -8,7 +8,7 @@ export default function HeroButtons() {
       {/* Request Button */}
       <Link
         href="#"
-        className="px-12 py-3 bg-[#2D2E83] text-white rounded-full  font-medium text-[16px] leading-[24px] transition hover:brightness-110 "
+        className="px-12 py-3 text-center bg-[#2D2E83] text-white rounded-full  font-medium text-[16px] leading-[24px] transition hover:brightness-110 "
         style={{ fontFamily: "var(--font-inter)" }}
       >
         Request
