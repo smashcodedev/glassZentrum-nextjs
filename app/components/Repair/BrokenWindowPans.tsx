@@ -9,9 +9,9 @@ export default function BrokenWindowPans() {
       imageSrc="/images/BG.jpg"
       reverse={false}
       floatingCardClassName="-translate-y-10"
-      textClassName="!mt-[15.5rem] -translate-x-10"
+      textClassName="mt-0  -translate-x-0 lg:!mt-[15.5rem] lg:-translate-x-10"
       imageHeight="h-[550px]"
-      imageWidth="w-[550px]"
+      imageWidth="w-[510px] sm:w-[550px]"
     />
   );
 }

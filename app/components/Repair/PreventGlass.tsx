@@ -17,7 +17,7 @@ export default function PreventGlass() {
           imageClass="!rounded-3xl "
           imageSrc="/images/repair/preventGlass.jpg"
           imageWidth="w-[260px] sm:w-[320px] md:w-[380px] lg:w-[500px]"
-          imageClassName="rounded-3xl !-translate-y-6"
+          imageClassName="rounded-3xl lg:!-translate-y-6 sm:!translate-y-10"
           textSectionHeight="lg:flex-[1.7]"
           className="!py-10"
           noNextImage={true}

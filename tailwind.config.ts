@@ -12,6 +12,11 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      screens: {
+        xl2: "1200px", // custom breakpoint start for your middle range
+        "2xl": "1536px", // keep Tailwind default
+        "3xl": "1700px", // optional for ultra-wide
+      },
     },
   },
   plugins: [],

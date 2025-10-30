@@ -13,9 +13,9 @@ export interface VideoSectionProps {
   overlayOpacity?: string;
   className?: string;
   maxTextWidth?: string;
-  imageWidth?: string; 
-  borderRadius?: string; 
-  background?:string
+  imageWidth?: string;
+  borderRadius?: string;
+  background?: string;
 }
 
 const VideoSection: React.FC<VideoSectionProps> = ({
@@ -52,7 +52,7 @@ const VideoSection: React.FC<VideoSectionProps> = ({
       {/* Image */}
       <div
         className={cn(
-          "relative overflow-hidden",
+          "relative overflow-hidden  aspect-[16/9] max-w-[1250px] w-full",
           imageWidth,
           imageHeight,
           borderRadius
@@ -65,7 +65,9 @@ const VideoSection: React.FC<VideoSectionProps> = ({
           priority
           className="object-cover object-center w-full h-full"
         />
-        {overlayOpacity && <div className={cn("absolute inset-0", overlayOpacity)} />}
+        {overlayOpacity && (
+          <div className={cn("absolute inset-0", overlayOpacity)} />
+        )}
       </div>
     </section>
   );

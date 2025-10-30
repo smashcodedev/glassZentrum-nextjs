@@ -4,7 +4,7 @@ import HeroButtons from "./HeroButtons";
 
 export default function HeroText() {
   return (
-    <div className="relative flex flex-col items-start justify-center gap-8  sm:gap-10 max-w-[600px] lg:pl-0 px-2 sm:px-4">
+    <div className="relative flex flex-col items-start justify-center gap-8  sm:gap-10 max-w-[600px] lg:pl-0 px-2 sm:px-4 ">
       {/* Decorative Background */}
 
       {/* Heading */}

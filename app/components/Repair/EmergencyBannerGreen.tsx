@@ -6,9 +6,9 @@ import { InfoBanner } from "../Ui/Banner/InfoBanner";
 export default function EmergencyBannerGreen() {
   return (
     <InfoBanner
+      contentWrapperClassName="lg:w-full !w-[90%]"
       title="Emergency service : 040 32042000"
       subtitle="Or you can easily contact us by email. To do this, click on the contact button below!"
-      
       ctaLabel="Contact Us"
       onCta={() => alert("Calling emergency service...")}
       bgColor="#009937"

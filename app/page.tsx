@@ -13,7 +13,7 @@ export default function HomePage() {
     <>
       <Hero />
       <Services />
-      <section className="bg-[#f8f9ff] min-h-screen">
+      <section className="bg-[#f8f9ff]">
         <EmergencyBanner
           onCta={() => {
             console.log("emergency cta");

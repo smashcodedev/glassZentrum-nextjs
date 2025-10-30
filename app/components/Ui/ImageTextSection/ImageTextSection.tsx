@@ -109,7 +109,7 @@ const ImageTextSection: React.FC<ImageTextSectionProps> = ({
           }`}
         >
           <div
-            className={`flex-shrink-0 ${
+            className={`flex-shrink-0 relative ${
               imageWidth ?? "w-[90%] max-w-[600px]"
             } ${imageClassName}`}
           >
@@ -134,6 +134,50 @@ const ImageTextSection: React.FC<ImageTextSectionProps> = ({
                 loading="lazy"
               />
             )}
+
+            <div
+              className="
+    absolute 
+    z-20 
+    flex md:hidden 
+    justify-start 
+    w-full 
+    pointer-events-none 
+    top-[1.5rem] sm:top-[2rem] 
+    left-[1rem] sm:left-[1.5rem]
+  "
+            >
+              <div
+                tabIndex={0}
+                className="
+      bg-white 
+      rounded-xl sm:rounded-2xl 
+      shadow-[0px_6px_12px_rgba(0,0,0,0.08)] 
+      px-4 sm:px-6 py-3 sm:py-4 
+      w-[85%] sm:w-[70%] 
+      max-w-[360px] 
+      flex flex-col items-start 
+      pointer-events-auto 
+      transition-transform duration-300 
+      focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2D2E83]
+    "
+              >
+                <div>
+                  <div
+                    className="text-sm sm:text-base text-[#2D2E83] mb-1 sm:mb-2 font-semibold"
+                    style={{ fontFamily: "var(--font-inter)" }}
+                  >
+                    {eyebrow}
+                  </div>
+                  <h3
+                    className="text-lg sm:text-xl font-semibold text-[#0f1724] leading-snug"
+                    style={{ fontFamily: "var(--font-inter)" }}
+                  >
+                    {title}
+                  </h3>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -166,7 +210,7 @@ const ImageTextSection: React.FC<ImageTextSectionProps> = ({
         </div>
 
         {/* Mobile Card */}
-        {mobileCardNode !== null && (
+        {/* {mobileCardNode !== null && (
           <div
             className={`md:hidden mt-4 w-full max-w-[520px] mx-auto ${mobileCardClassName}`}
           >
@@ -185,7 +229,7 @@ const ImageTextSection: React.FC<ImageTextSectionProps> = ({
               </div>
             )}
           </div>
-        )}
+        )} */}
       </div>
     </section>
   );
