@@ -70,11 +70,9 @@ const BigImageComponent: React.FC<ImageTextSectionProps> = ({
             alt={imageAlt}
             width={Number(imageWidth)}
             height={Number(imageHeight)}
-            className={`object-cover w-full ${imageClass}`}
-            style={{
-              height: imageHeight ? `${imageHeight}px` : "auto",
-            }}
+            className={`object-cover w-full rounded-2xl ${imageClass} h-[350px] sm:h-[450px] md:h-[500px] lg:h-[700px]`}
             priority
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1250px"
           />
         </div>
 
