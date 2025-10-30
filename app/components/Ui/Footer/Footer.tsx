@@ -17,7 +17,7 @@ type FooterProps = {
 };
 
 export default function Footer({
-  logoSrc = "/images/logo.svg",
+  logoSrc = "/images/flog.svg",
   logoAlt = "Glasszentrum Nord",
   joinText = "Join us on our mission to improve quality of life through routine and affordable chiropractic care.",
   infoLinks = [
@@ -30,7 +30,7 @@ export default function Footer({
     { label: "Sitemap", href: "#" },
     { label: "Imprint", href: "#" },
   ],
-  copyrightText = "© 2024 Glass Center North. All rights reserved.",
+  copyrightText = `© ${new Date().getFullYear()} Glass Center North. All rights reserved.`,
 }: FooterProps) {
   const fadeUp: Variants = {
     hidden: { opacity: 0, y: 20 },

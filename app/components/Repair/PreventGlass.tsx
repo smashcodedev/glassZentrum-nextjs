@@ -5,7 +5,7 @@ import TwoColumnSection from "../Ui/TwoColumnSection";
 
 export default function PreventGlass() {
   return (
-    <div className="w-full flex justify-center px-6 sm:px-10 lg:px-20 py-10">
+    <div className="w-full flex justify-center px-6 sm:px-10 lg:px-20 py-10 !bg-[#f8f9ff]">
       <div className="w-full max-w-[1250px] bg-[#F8FAFC] shadow-md rounded-2xl overflow-hidden border border-gray-200">
         <TwoColumnSection
           reverse={false}
@@ -21,6 +21,7 @@ export default function PreventGlass() {
           textSectionHeight="lg:flex-[1.7]"
           className="!py-10"
           noNextImage={true}
+          bgColor="bg-white"
         />
       </div>
     </div>

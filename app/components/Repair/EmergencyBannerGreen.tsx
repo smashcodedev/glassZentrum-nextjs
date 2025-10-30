@@ -17,7 +17,7 @@ export default function EmergencyBannerGreen() {
       ctaTextColor="#000"
       borderRadius="rounded-3xl"
       shadow="shadow-xl"
-      paddingY="py-8 sm:py-10 lg:py-12"
+      paddingY="py-8 sm:py-10 lg:py-20"
       paddingX="px-6 sm:px-12 lg:px-16 xl:px-20"
       textAlign="center"
       gap="gap-0"
@@ -26,6 +26,7 @@ export default function EmergencyBannerGreen() {
       highlightClassName=""
       buttonClassName=""
       layout="vertical"
+      greena={true}
     />
   );
 }

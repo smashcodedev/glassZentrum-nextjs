@@ -14,7 +14,7 @@ export default function GlassMirror() {
       ]}
       buttonText="Our emergency service number:  040 32042000"
       onButtonClick={() => console.log("CTA clicked")}
-      sectionClass="!bg-white !text-[16px]"
+      sectionClass="!bg-[#f8f9ff] !text-[16px]"
       paragraphClass="!text-[#585C67]"
       buttonClass="!bg-[#2D2E83]"
     />

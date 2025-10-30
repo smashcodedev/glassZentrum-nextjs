@@ -55,7 +55,7 @@ const ListSection: React.FC<ListSectionProps> = ({
               }}
             >
               <div
-                className={`flex items-start gap-3 sm:gap-4 border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-200 ${itemBoxClass}`}
+                className={`flex items-start gap-3 sm:gap-4  rounded-[28px] shadow-md p-4 hover:shadow-md transition-all duration-200 ${itemBoxClass}`}
               >
                 <div className="flex-shrink-0 mt-[2px]">
                   <CheckCircle
@@ -63,7 +63,7 @@ const ListSection: React.FC<ListSectionProps> = ({
                   />
                 </div>
                 <p
-                  className={`text-gray-700 text-[0.95rem] sm:text-lg leading-snug sm:leading-relaxed ${textClass}`}
+                  className={`text-[#191D21] font-semibold text-lg sm:text-lg leading-snug sm:leading-relaxed ${textClass}`}
                 >
                   {item}
                 </p>

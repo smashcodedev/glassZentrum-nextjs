@@ -13,7 +13,7 @@ From glass showers to cutting mirrors to repair glazing; From precisely fitting
 Visit the Glass Center North in the Handworker Ottesen. You will find the glassworks right there on the ground floor. We would be happy to advise you on your next project."
       ctaLabel="Contact Us"
       ctaHref="/contact"
-      imageSrc="/images/about/do.png"
+      imageSrc="/images/aba.png"
       className="lg:!pb-20"
     />
   );

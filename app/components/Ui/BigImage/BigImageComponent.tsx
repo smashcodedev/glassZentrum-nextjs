@@ -7,7 +7,9 @@ import { motion } from "framer-motion";
 interface ImageTextSectionProps {
   imageSrc: string;
   imageAlt?: string;
-  paragraphs: string[];
+  // paragraphs: string[];
+  paragraphs: (string | React.ReactNode)[];
+
   buttonText?: string;
   onButtonClick?: () => void;
   paddingClass?: string;
@@ -55,7 +57,7 @@ const BigImageComponent: React.FC<ImageTextSectionProps> = ({
     : `w-full bg-white ${paddingClass} ${sectionClass}`;
 
   const innerClasses = isBanner
-    ? `max-w-[1250px] w-full rounded-2xl shadow-md border border-gray-200 ${bannerBgColor} ${bannerPaddingClass}`
+    ? `max-w-[1250px] w-full rounded-[40px] shadow-md border border-gray-200 ${bannerBgColor} ${bannerPaddingClass}`
     : `max-w-[1250px] mx-auto`;
 
   const textColorClass = isBanner ? bannerTextColor : "text-gray-700";
@@ -65,24 +67,23 @@ const BigImageComponent: React.FC<ImageTextSectionProps> = ({
       <div
         className={`flex flex-col gap-10 text-center items-start ${innerClasses}`}
       >
-        <div className="w-full overflow-hidden rounded-2xl flex items-center">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <Image
-              src={imageSrc}
-              alt={imageAlt}
-              width={Number(imageWidth)}
-              height={Number(imageHeight)}
-              className={`object-cover w-full rounded-2xl ${imageClass} h-[350px] sm:h-[450px] md:h-[500px] lg:h-[700px]`}
-              priority
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1250px"
-            />
-          </motion.div>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="w-full overflow-hidden rounded-[40px] flex items-center"
+        >
+          <Image
+            src={imageSrc}
+            alt={imageAlt}
+            width={Number(imageWidth)}
+            height={Number(imageHeight)}
+            className={`object-cover w-full rounded-2xl ${imageClass} h-[350px] sm:h-[450px] md:h-[500px] lg:h-[700px]`}
+            priority
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1250px"
+          />
+        </motion.div>
 
         <div className={`flex flex-col gap-6 w-full text-${paragraphAlign}`}>
           <motion.div

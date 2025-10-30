@@ -34,22 +34,25 @@ export const services: Service[] = [
   },
   {
     id: 4,
-    title: "Custom made mirrors",
-    description: "Visually enlarge your rooms..",
+    title: "Custom made mirrors with some extras...",
+    description:
+      "Individual design. Professional assembly. Maximum transparency. Professional assembly. Professtioanl Glass. Individual design.",
     image: "/images/services/services-4.jpg",
     href: "/services/mirrors",
   },
   {
     id: 5,
-    title: "Man looking for routes glass",
-    description: "Lorem ipsum dolor sit amet consectetur ..",
+    title: "Man looking for routes glass with the urge of buying",
+    description:
+      "Individual design. Professional assembly. Maximum transparency. Professional assembly. Professtioanl Glass. Individual design.",
     image: "/images/services/services-5.jpg",
     href: "/services/inspection",
   },
   {
     id: 6,
     title: "Glass care of office cleaning",
-    description: "Lorem ipsum dolor sit amet consectetur ..",
+    description:
+      "Individual design. Professional assembly. Maximum transparency. Professional assembly. Professtioanl Glass. Individual design.",
     image: "/images/services/services-6.jpg",
     href: "/services/cleaning",
   },

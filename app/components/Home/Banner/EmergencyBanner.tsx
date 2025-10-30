@@ -19,24 +19,29 @@ const EmergencyBanner: React.FC<EmergencyBannerProps> = ({
   onCta,
 }) => {
   // Smooth green radial gradient (center glow, no white)
-  const bgStyle = {
-    background: `
-      radial-gradient(
-        circle at center,
-        #00A13A 0%,
-        #009636 35%,
-        #008431 65%,
-        #006F2A 85%,
-        #005D23 100%
-      )
-    `,
-  } as React.CSSProperties;
+  // const bgStyle = {
+  //   background: `
+  //     radial-gradient(
+  //       circle at center,
+  //       #00A13A 0%,
+  //       #009636 35%,
+  //       #008431 65%,
+  //       #006F2A 85%,
+  //       #005D23 100%
+  //     )
+  //   `,
+  // } as React.CSSProperties;
 
   return (
     <section className="w-full px-6 sm:px-8">
       <div
-        className="mx-auto max-w-[1250px] rounded-[36px] py-12 sm:py-14 lg:py-16 px-6 sm:px-10 text-white"
-        style={bgStyle}
+        className="mx-auto max-w-[1250px] rounded-[45px] py-12 sm:py-14 lg:py-16 px-6 sm:px-10 text-white"
+        // style={bgStyle}
+        style={{
+          backgroundImage:  `url(/images/bbg.png)`,
+          backgroundSize: "cover",
+          backgroundPosition: "top",
+        }}
         role="region"
         aria-label="Emergency service"
       >

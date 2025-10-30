@@ -25,7 +25,10 @@ export default function Repair() {
       <LongText />
       <ProtectGlass />
       <PreventGlass />
-      <EmergencyBanner />
+      <div className="!bg-[#f8f9ff] w-full min-h-[400px]  flex items-center justify-center">
+        <EmergencyBanner />
+      </div>
+
       <GlassRepair />
       <BrandRepairCarousel />
       <BrokenWindowPans />

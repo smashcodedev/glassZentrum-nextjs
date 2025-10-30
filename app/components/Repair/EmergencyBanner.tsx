@@ -6,6 +6,7 @@ import { InfoBanner } from "../Ui/Banner/InfoBanner";
 export default function EmergencyBanner() {
   return (
     <InfoBanner
+      containerClassName="!bg-[#f8f9ff]"
       contentWrapperClassName="lg:w-full !w-[90%]"
       title="Emergency Service"
       subtitle="Whether it's a break-in, storm damage or another cause, just call (040) 32 04 20 00 and we'll come."
@@ -26,6 +27,7 @@ export default function EmergencyBanner() {
       subtitleClassName=""
       highlightClassName=""
       buttonClassName=""
+
     />
   );
 }

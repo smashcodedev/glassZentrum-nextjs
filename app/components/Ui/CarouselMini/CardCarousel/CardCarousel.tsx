@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -50,13 +50,10 @@ export default function CardCarousel({
     return () => window.removeEventListener("resize", updateView);
   }, []);
 
-  const visibleItems = items.slice(
-    currentIndex,
-    currentIndex + cardsPerView
-  );
+  const visibleItems = items.slice(currentIndex, currentIndex + cardsPerView);
 
   return (
-    <section className="w-full flex flex-col items-center py-10 px-4 sm:px-6 lg:px-12 bg-[#f9fbff]">
+    <section className="w-full flex flex-col items-center py-10 px-4 sm:px-6 lg:px-12 bg-[#f8f9ff]">
       {title && (
         <h2 className="text-3xl sm:text-4xl font-semibold text-center mb-10 text-[#1e2447]">
           {title}
@@ -89,7 +86,8 @@ export default function CardCarousel({
                     fill
                     className="object-cover"
                   />
-                  <div className="absolute bottom-3 left-3 bg-[#2D2E83] text-white px-4 py-1 rounded-lg text-sm font-medium">
+                  <div className="translate-y-6 shadow-lg absolute w-[90%] flex items-center gap-3 bottom-3 p left-3 bg-[#2D2E83] text-white px-4 pr-16 py-4 rounded-[14px] text-sm font-medium">
+                    <img src="/images/cal.png" width="19px" height="19px" />
                     {item.date}
                   </div>
                 </div>
@@ -103,10 +101,10 @@ export default function CardCarousel({
                   </p>
                   <a
                     href={item.link || "#"}
-                    className="inline-flex items-center text-[#2D2E83] font-medium hover:underline"
+                    className="inline-flex gap-3 items-center bg-[#EAEAF3] p-[13px] rounded-[17px] text-[#2D2E83] font-semibold "
                   >
                     Learn More
-                    <ChevronRight className="ml-1 w-4 h-4" />
+                    <ArrowRight className="ml-1 w-4 h-4" />
                   </a>
                 </div>
               </motion.div>
@@ -119,16 +117,16 @@ export default function CardCarousel({
           <button
             onClick={handlePrev}
             disabled={currentIndex === 0}
-            className="p-3 bg-white border rounded-full shadow hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed"
+            className="p-3 bg-white text-[#2D2E83] border rounded-full shadow hover:bg-gray-50"
           >
-            <ChevronLeft className="w-5 h-5 text-gray-700" />
+            <ArrowLeft className="w-5 h-5 " />
           </button>
           <button
             onClick={handleNext}
             disabled={currentIndex + cardsPerView >= items.length}
             className="p-3 bg-[#2D2E83] text-white rounded-full shadow hover:bg-[#222374] disabled:opacity-40 disabled:cursor-not-allowed"
           >
-            <ChevronRight className="w-5 h-5" />
+            <ArrowRight className="w-5 h-5" />
           </button>
         </div>
       </div>

@@ -36,6 +36,7 @@ export interface InfoBannerProps {
   contentWrapperClassName?: string; // optional inner wrapper customization
   sectionSpacing?: string; // custom margin around the main container
   fontScale?: "sm" | "md" | "lg" | "xl"; // controls typography scale
+  greena?: boolean;
 }
 
 export const InfoBanner: React.FC<InfoBannerProps> = ({
@@ -69,6 +70,7 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({
   contentWrapperClassName = "",
   sectionSpacing = "my-8 sm:my-12 lg:my-16",
   fontScale = "md",
+  greena,
 }) => {
   // 🔹 Responsive text scaling
   const fontScaleMap = {
@@ -106,10 +108,23 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({
         className={`relative w-full max-w-[1250px] ${borderRadius} ${shadow} ${paddingY} ${paddingX} ${gap} flex ${
           layout === "vertical" ? "flex-col" : "flex-col lg:flex-row"
         } items-center justify-between transition-all duration-300 ${contentWrapperClassName}`}
-        style={{ backgroundColor: bgColor, color: textColor }}
+        // style={{ backgroundColor: bgColor, color: textColor }}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
+        style={
+          greena
+            ? {
+                backgroundImage: `url(/images/bbg.png)`,
+                backgroundSize: "cover",
+                backgroundPosition: "top",
+                color: textColor,
+              }
+            : {
+                color: textColor,
+                backgroundColor: bgColor,
+              }
+        }
       >
         {/* Left (Text) Section */}
         <div

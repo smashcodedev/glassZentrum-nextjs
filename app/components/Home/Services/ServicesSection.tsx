@@ -12,7 +12,6 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
   subtitle = "Sed ut perspiciatis unde omnis iste natus error sit.",
   items,
 }) => {
-  
   return (
     <section className="w-full  py-14 sm:py-16 lg:py-24 bg-[#f8f9ff]">
       <div className="max-w-[1250px] mx-auto px-6 sm:px-8 xl:px-0">
@@ -41,7 +40,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
           "
         >
           {items.map((item) => (
-            <ServiceCard {...item} />
+            <ServiceCard key={item.id} {...item} />
           ))}
         </div>
       </div>

@@ -17,7 +17,7 @@ const ServiceCard: React.FC<Service> = ({
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true }}
     >
-      <article className="h-full bg-white rounded-2xl overflow-hidden shadow-[0_6px_30px_rgba(18,18,18,0.06)] flex flex-col justify-between">
+      <article className="h-full bg-white rounded-[8px] overflow-hidden shadow-[0_6px_30px_rgba(18,18,18,0.06)] flex flex-col justify-between">
         <div className="relative w-full h-44 sm:h-52 md:h-48 lg:h-56">
           <Image
             src={image}

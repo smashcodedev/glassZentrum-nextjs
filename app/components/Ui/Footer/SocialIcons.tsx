@@ -34,7 +34,7 @@ export default function SocialIcons({
           <img
             src={ic.src}
             alt={ic.name}
-            className="w-[55%] h-[55%] object-contain"
+            className="w-[40%] h-[40%] object-contain"
           />
         </button>
       ))}

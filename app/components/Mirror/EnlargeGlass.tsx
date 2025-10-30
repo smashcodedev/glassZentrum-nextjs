@@ -9,6 +9,7 @@ export default function EnlargeGlass() {
       buttonText="Contact us"
       titleClass="text-md"
       buttonClass="!bg-[#2D2E83]"
+      sectionClass="!bg-[#f8f9ff]"
     />
   );
 }
