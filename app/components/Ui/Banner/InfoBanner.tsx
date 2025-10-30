@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 
 export interface InfoBannerProps {
   title?: string;
@@ -101,25 +102,24 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({
     <div
       className={`w-full flex justify-center ${sectionSpacing} ${containerClassName}`}
     >
-      <div
-        className={`relative w-full max-w-[1250px] ${borderRadius} ${shadow} ${paddingY} ${paddingX} ${gap}
-          flex ${layout === "vertical" ? "flex-col" : "flex-col lg:flex-row"} 
-          items-center justify-between transition-all duration-300 ${contentWrapperClassName}`}
-        style={{
-          backgroundColor: bgColor,
-          color: textColor,
-        }}
+      <motion.div
+        className={`relative w-full max-w-[1250px] ${borderRadius} ${shadow} ${paddingY} ${paddingX} ${gap} flex ${
+          layout === "vertical" ? "flex-col" : "flex-col lg:flex-row"
+        } items-center justify-between transition-all duration-300 ${contentWrapperClassName}`}
+        style={{ backgroundColor: bgColor, color: textColor }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
       >
         {/* Left (Text) Section */}
         <div
-          className={`flex-1 flex flex-col gap-2 sm:gap-3 
-            ${
-              textAlign === "center"
-                ? "items-center text-center"
-                : textAlign === "right"
-                ? "items-end text-right"
-                : "items-start text-left"
-            }`}
+          className={`flex-1 flex flex-col gap-2 sm:gap-3 ${
+            textAlign === "center"
+              ? "items-center text-center"
+              : textAlign === "right"
+              ? "items-end text-right"
+              : "items-start text-left"
+          }`}
         >
           {title && (
             <h2
@@ -128,7 +128,6 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({
               {title}
             </h2>
           )}
-
           {subtitle && (
             <p
               className={`${fontScaleMap[fontScale].subtitle} font-normal opacity-90 ${subtitleClassName}`}
@@ -136,7 +135,6 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({
               {subtitle}
             </p>
           )}
-
           {highlight && (
             <p
               className={`${fontScaleMap[fontScale].highlight} font-semibold ${highlightClassName}`}
@@ -148,26 +146,26 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({
 
         {/* Right (Button) Section */}
         {ctaLabel && (
-          <div
+          <motion.div
             className={`flex ${
               layout === "vertical"
                 ? "justify-center items-center mt-6 sm:mt-8"
                 : "lg:flex-1 justify-center lg:justify-end items-center mt-4 lg:mt-0"
             } w-full lg:w-auto`}
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.4, ease: "easeOut", delay: 0.2 }}
           >
             <button
               onClick={onCta}
               className={`px-6 py-3 rounded-full font-semibold ${fontScaleMap[fontScale].button} transition duration-300 hover:opacity-90 ${buttonClassName}`}
-              style={{
-                backgroundColor: ctaBgColor,
-                color: ctaTextColor,
-              }}
+              style={{ backgroundColor: ctaBgColor, color: ctaTextColor }}
             >
               {ctaLabel}
             </button>
-          </div>
+          </motion.div>
         )}
-      </div>
+      </motion.div>
     </div>
   );
 };

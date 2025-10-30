@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { motion, Variants } from "framer-motion";
 
 export interface VideoSectionProps {
   heading: string;
@@ -17,6 +18,11 @@ export interface VideoSectionProps {
   borderRadius?: string;
   background?: string;
 }
+
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
 
 const VideoSection: React.FC<VideoSectionProps> = ({
   heading,
@@ -38,25 +44,32 @@ const VideoSection: React.FC<VideoSectionProps> = ({
       )}
     >
       {/* Heading */}
-      <h2
+      <motion.h2
         className={cn(
           "font-semibold mb-6 sm:mb-8 md:mb-10 leading-snug text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl",
           headingClassName,
           maxTextWidth
         )}
         style={{ fontFamily: "var(--font-inter)" }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeUp}
       >
         {heading}
-      </h2>
+      </motion.h2>
 
       {/* Image */}
-      <div
+      <motion.div
         className={cn(
           "relative overflow-hidden  w-[50%] aspect-[16/9] max-w-[1250px] lg:w-full",
           imageWidth,
           imageHeight,
           borderRadius
         )}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }}
+        viewport={{ once: true }}
       >
         <Image
           src={imageSrc}
@@ -65,10 +78,8 @@ const VideoSection: React.FC<VideoSectionProps> = ({
           priority
           className="object-cover object-center w-full h-full"
         />
-        {overlayOpacity && (
-          <div className={cn("absolute inset-0", overlayOpacity)} />
-        )}
-      </div>
+        {overlayOpacity && <div className={cn("absolute inset-0", overlayOpacity)} />}
+      </motion.div>
     </section>
   );
 };

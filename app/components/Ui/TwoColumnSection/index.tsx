@@ -4,6 +4,8 @@ import React, { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
+import { Variants } from "framer-motion";
 
 export interface TwoColumnSectionProps {
   textSectionHeight?: string;
@@ -36,6 +38,7 @@ export interface TwoColumnSectionProps {
   imageClass?: string;
   noNextImage?: boolean;
   paddingTop?: boolean;
+  objectFitMode?: "cover" | "contain" | "top" | "bottom" | "center";
 }
 
 const TwoColumnSection: React.FC<TwoColumnSectionProps> = ({
@@ -68,7 +71,21 @@ const TwoColumnSection: React.FC<TwoColumnSectionProps> = ({
   imageClass,
   noNextImage,
   paddingTop,
+  objectFitMode,
 }) => {
+  const fadeUp: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (custom: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: custom * 0.1,
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    }),
+  };
+
   return (
     <section
       className={cn(
@@ -142,7 +159,18 @@ const TwoColumnSection: React.FC<TwoColumnSectionProps> = ({
                   src={imageSrc}
                   alt={imageAlt || "section image"}
                   fill
-                  className={cn("object-cover", imageClass)}
+                  className={cn(
+                    objectFitMode === "contain"
+                      ? "object-contain"
+                      : objectFitMode === "top"
+                      ? "object-cover object-top"
+                      : objectFitMode === "bottom"
+                      ? "object-cover object-bottom"
+                      : objectFitMode === "center"
+                      ? "object-cover object-center"
+                      : "object-cover", // default
+                    imageClass
+                  )}
                   sizes="(max-width: 360px) 95vw, (max-width: 480px) 90vw, (max-width: 768px) 70vw, 580px"
                   priority
                 />
@@ -152,7 +180,13 @@ const TwoColumnSection: React.FC<TwoColumnSectionProps> = ({
         </div>
 
         {/* ✅ DESKTOP VERSION (hidden on mobile) */}
-        <div className="hidden lg:flex flex-1 justify-center lg:justify-end">
+        <motion.div
+          className="hidden lg:flex flex-1 justify-center lg:justify-end"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeUp}
+        >
           {imageContent ? (
             <>{imageContent}</>
           ) : imageSrc ? (
@@ -183,15 +217,19 @@ const TwoColumnSection: React.FC<TwoColumnSectionProps> = ({
               )}
             </div>
           ) : null}
-        </div>
+        </motion.div>
 
         {/* Text Section */}
-        <div
+        <motion.div
           className={cn(
             "flex-1 text-center lg:text-left",
             textSectionHeight,
             textSectionWidth
           )}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeUp}
         >
           {children ? (
             children
@@ -286,7 +324,7 @@ const TwoColumnSection: React.FC<TwoColumnSectionProps> = ({
               )}
             </>
           )}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

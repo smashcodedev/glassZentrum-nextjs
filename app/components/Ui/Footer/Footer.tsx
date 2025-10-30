@@ -1,9 +1,12 @@
-// components/footer/Footer.tsx
+"use client";
+
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
 import SocialIcons from "./SocialIcons";
 import CTAButton from "./CtaButton";
 import ContactItem from "./ContactItem";
+import { Variants } from "framer-motion";
 
 type FooterProps = {
   logoSrc?: string;
@@ -29,12 +32,27 @@ export default function Footer({
   ],
   copyrightText = "© 2024 Glass Center North. All rights reserved.",
 }: FooterProps) {
+  const fadeUp: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (custom: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: custom * 0.1, duration: 0.6, ease: "easeOut" },
+    }),
+  };
+
   return (
     <footer className="bg-[#0B0B0B] text-gray-300 border-t border-[#1a1a1a]">
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 pt-16 pb-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16 items-start">
           {/* LOGO + SOCIAL + ABOUT */}
-          <div>
+          <motion.div
+            custom={0}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+          >
             <div className="mb-7">
               <Image
                 src={logoSrc}
@@ -57,10 +75,17 @@ export default function Footer({
             <div className="mt-6">
               <CTAButton href="/requests">Send a Request</CTAButton>
             </div>
-          </div>
+          </motion.div>
 
           {/* INFO LINKS */}
-          <div className="lg:ml-12">
+          <motion.div
+            custom={1}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            className="lg:ml-12"
+          >
             <h4 className="text-white font-semibold text-lg mb-6 tracking-wide">
               Info
             </h4>
@@ -76,12 +101,17 @@ export default function Footer({
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
           {/* CONFIGURATOR */}
-
-          {/* Column 3: Configurator */}
-          <div className=" lg:max-w-[220px]">
+          <motion.div
+            custom={2}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            className="lg:max-w-[220px]"
+          >
             <h4
               className="text-[#FBFBFB] font-semibold text-lg mb-5"
               style={{ fontFamily: "var(--font-inter)" }}
@@ -100,10 +130,16 @@ export default function Footer({
                 Get instant estimates and professional support.
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* CONTACT / GLASSWORKS */}
-          <div>
+          <motion.div
+            custom={3}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+          >
             <h4 className="text-white font-semibold text-lg mb-6 tracking-wide">
               The Glassworks
             </h4>
@@ -112,7 +148,7 @@ export default function Footer({
                 icon={
                   <div className="w-4 h-4 relative">
                     <Image
-                      src="/images/phone.svg" // your custom phone icon
+                      src="/images/phone.svg"
                       alt="Phone"
                       fill
                       className="object-contain"
@@ -132,7 +168,7 @@ export default function Footer({
                 icon={
                   <div className="w-4 h-4 relative">
                     <Image
-                      src="/images/email.svg" // your custom email icon
+                      src="/images/email.svg"
                       alt="Email"
                       fill
                       className="object-contain"
@@ -152,7 +188,7 @@ export default function Footer({
                 icon={
                   <div className="w-4 h-4 relative">
                     <Image
-                      src="/images/location.svg" // your custom location icon
+                      src="/images/location.svg"
                       alt="Location"
                       fill
                       className="object-contain"
@@ -161,7 +197,7 @@ export default function Footer({
                 }
                 label={
                   <>
-                    <span className="font-medium text-gray-100">Location:</span>{" "}
+                    <span className="font-medium text-gray-100">Location:</span>
                     <br />
                     22765 Hamburg <br />
                     GZN Glaszentrum Nord GmbH <br />
@@ -170,7 +206,7 @@ export default function Footer({
                 }
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 

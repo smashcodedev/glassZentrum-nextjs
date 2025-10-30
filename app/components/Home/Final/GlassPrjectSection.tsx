@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
 
 export default function GlassProjectSection({
   eyebrow = "Learn More",
@@ -16,15 +17,17 @@ export default function GlassProjectSection({
         {/* ===== DESKTOP VIEW ===== */}
         <div className="hidden lg:grid grid-cols-12 items-start gap-10 lg:gap-10 relative">
           {/* LEFT IMAGES */}
-          <div className="lg:col-span-7 relative flex justify-center lg:justify-start">
+          <motion.div
+            className="lg:col-span-7 relative flex justify-center lg:justify-start"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
             {/* Upper image */}
             <div
               className="rounded-3xl overflow-hidden shadow-lg"
-              style={{
-                width: "100%",
-                maxWidth: 440,
-                height: 460,
-              }}
+              style={{ width: "100%", maxWidth: 440, height: 460 }}
             >
               <Image
                 src={leftImage}
@@ -38,20 +41,18 @@ export default function GlassProjectSection({
             </div>
 
             {/* Lower overlapping image */}
-            <div
+            <motion.div
               className="absolute z-20"
-              style={{
-                right: 10,
-                bottom: -160,
-              }}
+              style={{ right: 10, bottom: -160 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
             >
               <div className="rounded-[30px] bg-white pt-4 transition-transform transform hover:scale-[1.02]">
                 <div
                   className="overflow-hidden rounded-[10px]"
-                  style={{
-                    width: 400,
-                    height: 440,
-                  }}
+                  style={{ width: 400, height: 440 }}
                 >
                   <Image
                     src={centerImage}
@@ -63,11 +64,17 @@ export default function GlassProjectSection({
                   />
                 </div>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* RIGHT TEXT CONTENT */}
-          <div className="lg:col-span-5 flex flex-col justify-start gap-8 text-left lg:max-w-[640px] xl:max-w-[700px] lg:-ml-8 relative">
+          <motion.div
+            className="lg:col-span-5 flex flex-col justify-start gap-8 text-left lg:max-w-[640px] xl:max-w-[700px] lg:-ml-8 relative"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            viewport={{ once: true }}
+          >
             <div className="space-y-4 lg:-ml-[14rem]">
               <h2
                 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#0f1724] leading-tight whitespace-pre-line"
@@ -93,24 +100,35 @@ export default function GlassProjectSection({
               ))}
             </div>
 
-            <div className="mt-6">
+            <motion.div
+              className="mt-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
               <div className="bg-[#00A13A] text-white rounded-2xl px-12 py-7 shadow-[0_10px_40px_rgba(15,155,64,0.15)] w-fit transition-transform hover:scale-[1.03]">
                 <h3 className="font-semibold text-xl mb-1 tracking-wide">
                   24/7 Support
                 </h3>
                 <p className="text-base opacity-90 max-w-[380px] leading-relaxed">
-                  24/7 support refers to customer service or technical
-                  assistance available around the clock.
+                  24/7 support refers to customer service or technical assistance available around the clock.
                 </p>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
 
         {/* ===== MOBILE VIEW ===== */}
         <div className="flex flex-col lg:hidden items-center text-center gap-6 sm:gap-8 mt-4">
           {/* IMAGES IN A ROW */}
-          <div className="flex justify-center gap-4 w-full">
+          <motion.div
+            className="flex justify-center gap-4 w-full"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
             {/* Left image */}
             <div className="rounded-2xl overflow-hidden shadow-lg w-[50%] sm:w-[50%]">
               <Image
@@ -134,7 +152,7 @@ export default function GlassProjectSection({
                 sizes="45vw"
               />
             </div>
-          </div>
+          </motion.div>
 
           {/* TITLE */}
           <h2
@@ -163,7 +181,13 @@ export default function GlassProjectSection({
           </div>
 
           {/* SUPPORT CARD */}
-          <div className="bg-[#00A13A] text-white rounded-2xl px-8 py-6 shadow-[0_10px_30px_rgba(15,155,64,0.2)] w-[85%] max-w-[400px]">
+          <motion.div
+            className="bg-[#00A13A] text-white rounded-2xl px-8 py-6 shadow-[0_10px_30px_rgba(15,155,64,0.2)] w-[85%] max-w-[400px]"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
             <h3 className="font-semibold text-lg mb-1 tracking-wide">
               24/7 Support
             </h3>
@@ -171,7 +195,7 @@ export default function GlassProjectSection({
               24/7 support refers to customer service or technical assistance
               available around the clock.
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

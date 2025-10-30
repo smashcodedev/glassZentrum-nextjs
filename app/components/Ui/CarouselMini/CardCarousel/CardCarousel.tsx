@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface CardCarouselProps {
   title?: string;
@@ -20,29 +21,20 @@ export default function CardCarousel({
   items,
 }: CardCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [fade, setFade] = useState(false);
 
   // Number of visible cards
   const visibleCount = 3;
 
   const handlePrev = () => {
     if (currentIndex === 0) return;
-    setFade(true);
-    setTimeout(() => {
-      setCurrentIndex((prev) => Math.max(prev - visibleCount, 0));
-      setFade(false);
-    }, 250);
+    setCurrentIndex((prev) => Math.max(prev - visibleCount, 0));
   };
 
   const handleNext = () => {
     if (currentIndex + visibleCount >= items.length) return;
-    setFade(true);
-    setTimeout(() => {
-      setCurrentIndex((prev) =>
-        Math.min(prev + visibleCount, items.length - visibleCount)
-      );
-      setFade(false);
-    }, 250);
+    setCurrentIndex((prev) =>
+      Math.min(prev + visibleCount, items.length - visibleCount)
+    );
   };
 
   // Responsive: show 1 card on mobile, 2 on tablet
@@ -72,47 +64,55 @@ export default function CardCarousel({
       )}
 
       <div className="relative w-full max-w-[1250px]">
-        {/* Fade Container */}
-        <div
-          className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 transition-opacity duration-300 ${
-            fade ? "opacity-0" : "opacity-100"
-          }`}
-        >
-          {visibleItems.map((item, i) => (
-            <div
-              key={i}
-              className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
-            >
-              <div className="relative w-full h-56">
-                <Image
-                  src={item.image}
-                  alt={item.headline}
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute bottom-3 left-3 bg-[#2D2E83] text-white px-4 py-1 rounded-lg text-sm font-medium">
-                  {item.date}
+        {/* AnimatePresence for smooth fade/slide */}
+        <AnimatePresence initial={false} mode="wait">
+          <motion.div
+            key={currentIndex} // triggers animation on index change
+            className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6`}
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -50 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
+            {visibleItems.map((item, i) => (
+              <motion.div
+                key={item.headline + i}
+                className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+              >
+                <div className="relative w-full h-56">
+                  <Image
+                    src={item.image}
+                    alt={item.headline}
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute bottom-3 left-3 bg-[#2D2E83] text-white px-4 py-1 rounded-lg text-sm font-medium">
+                    {item.date}
+                  </div>
                 </div>
-              </div>
 
-              <div className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  {item.headline}
-                </h3>
-                <p className="text-gray-600 text-sm mb-4 line-clamp-3">
-                  {item.description}
-                </p>
-                <a
-                  href={item.link || "#"}
-                  className="inline-flex items-center text-[#2D2E83] font-medium hover:underline"
-                >
-                  Learn More
-                  <ChevronRight className="ml-1 w-4 h-4" />
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    {item.headline}
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                    {item.description}
+                  </p>
+                  <a
+                    href={item.link || "#"}
+                    className="inline-flex items-center text-[#2D2E83] font-medium hover:underline"
+                  >
+                    Learn More
+                    <ChevronRight className="ml-1 w-4 h-4" />
+                  </a>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </AnimatePresence>
 
         {/* Navigation Arrows */}
         <div className="flex justify-center items-center gap-4 mt-10">

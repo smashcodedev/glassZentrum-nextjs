@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export interface ClaimAndGalleryProps {
   heading?: string;
@@ -22,10 +23,22 @@ const ClaimAndGallery: React.FC<ClaimAndGalleryProps> = ({
   imageAlt = "Our team working on custom glass pieces",
 }) => {
   return (
-    <section className="w-full bg-[#f6f8fb] px-6 sm:px-8 lg:px-12 py-10 lg:py-12 relative">
+    <motion.section
+      className="w-full bg-[#f6f8fb] px-6 sm:px-8 lg:px-12 py-10 lg:py-12 relative"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+    >
       <div className="max-w-[1250px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Text Side - Left */}
-        <div className="text-center lg:text-left order-2 lg:order-1">
+        <motion.div
+          className="text-center lg:text-left order-2 lg:order-1"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           <h2
             className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#0f1724] leading-snug mb-5"
             style={{ fontFamily: "var(--font-inter)" }}
@@ -45,18 +58,24 @@ const ClaimAndGallery: React.FC<ClaimAndGalleryProps> = ({
           >
             {ctaLabel}
           </Link>
-        </div>
+        </motion.div>
 
         {/* Image Side - Right */}
-        <div className="flex justify-center lg:justify-end order-1 lg:order-2 lg:pr-4">
+        <motion.div
+          className="flex justify-center lg:justify-end order-1 lg:order-2 lg:pr-4"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+          viewport={{ once: true }}
+        >
           <div
             className="
-      w-full
-      max-w-[360px] sm:max-w-[440px] md:max-w-[500px] lg:max-w-[560px]
-      flex-shrink-0
-      overflow-hidden
-      rounded-xl
-    "
+              w-full
+              max-w-[360px] sm:max-w-[440px] md:max-w-[500px] lg:max-w-[560px]
+              flex-shrink-0
+              overflow-hidden
+              rounded-xl
+            "
           >
             <Image
               src={imageSrc}
@@ -68,9 +87,9 @@ const ClaimAndGallery: React.FC<ClaimAndGalleryProps> = ({
               priority
             />
           </div>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

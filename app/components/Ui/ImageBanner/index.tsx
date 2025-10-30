@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 interface ImageBannerProps {
   title: string;
@@ -22,9 +23,8 @@ export default function ImageBanner({
     <section
       className={cn(
         "relative w-full flex items-center justify-center text-center text-white overflow-hidden",
-        // Refined heights – more subtle on large screens
         "h-[220px] sm:h-[280px] md:h-[340px] lg:h-[380px] xl:h-[420px]",
-        className,
+        className
       )}
     >
       {/* Background Image */}
@@ -39,21 +39,25 @@ export default function ImageBanner({
       {/* Overlay */}
       <div className={cn("absolute inset-0", overlayOpacity)} />
 
-      {/* Title */}
-      <div className="relative z-10 max-w-[720px] px-4">
+      {/* Title with animation */}
+      <motion.div
+        className="relative z-10 max-w-[720px] px-4"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <h1
           className={cn(
             "font-semibold tracking-tight",
-            // Better vertical rhythm — more breathing space across sizes
-            "sm:text-3xl leading-[1.25] sm:leading-[1.1] ",
-            "text-2xl  md:text-[38px] lg:text-[46px] xl:text-[56px]",
+            "sm:text-3xl leading-[1.25] sm:leading-[1.1]",
+            "text-2xl md:text-[38px] lg:text-[46px] xl:text-[56px]",
             bigText ? "xl:text-[46px] xl:scale-110" : ""
           )}
           style={{ fontFamily: "var(--font-inter)" }}
         >
           {title}
         </h1>
-      </div>
+      </motion.div>
     </section>
   );
 }

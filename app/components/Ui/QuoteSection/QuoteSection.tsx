@@ -2,6 +2,8 @@
 
 import React from "react";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
+
 
 interface QuoteSectionProps {
   text: string;
@@ -25,7 +27,12 @@ const QuoteSection: React.FC<QuoteSectionProps> = ({
       className={cn("w-full px-6 sm:px-8 lg:px-12 py-12 md:py-16", className)}
       style={{ backgroundColor: bgColor, fontFamily: "var(--font-inter)" }}
     >
-      <div className="max-w-[1250px] mx-auto">
+      <motion.div
+        className="max-w-[1250px] mx-auto"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
         <div className="border-l-4 pl-6 sm:pl-8 py-4" style={{ borderColor }}>
           <p
             className="text-lg sm:text-xl md:text-xl leading-relaxed"
@@ -46,7 +53,7 @@ const QuoteSection: React.FC<QuoteSectionProps> = ({
             </p>
           )}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

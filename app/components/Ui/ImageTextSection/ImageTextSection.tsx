@@ -4,6 +4,7 @@
 import React from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 export interface ImageTextSectionProps {
   // Optional text props
@@ -59,7 +60,10 @@ const ImageTextSection: React.FC<ImageTextSectionProps> = ({
   floatingClass,
 }) => {
   return (
-    <section
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       className={`w-full ${bgColor} ${paddingY} ${paddingX} relative ${sectionClassName}`}
     >
       {/* Floating Card (Desktop) */}
@@ -189,15 +193,21 @@ const ImageTextSection: React.FC<ImageTextSectionProps> = ({
               imageWidth ?? "w-[90%] max-w-[600px]"
             } ${imageClassName}`}
           >
-            <img
-              src={imageSrc || "/images/building.jpg"}
-              alt={title ?? "Default Image"}
-              className={`object-cover rounded-3xl ${
-                imageHeight ??
-                "h-[260px] sm:h-[315px] md:h-[360px] lg:h-[520px]"
-              } w-full`}
-              loading="lazy"
-            />
+            <motion.div
+              initial={{ opacity: 0, x: reverse ? 50 : -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
+              <img
+                src={imageSrc || "/images/building.jpg"}
+                alt={title ?? "Default Image"}
+                className={`object-cover rounded-3xl ${
+                  imageHeight ??
+                  "h-[260px] sm:h-[315px] md:h-[360px] lg:h-[520px]"
+                } w-full`}
+                loading="lazy"
+              />
+            </motion.div>
           </div>
         </div>
 
@@ -209,13 +219,18 @@ const ImageTextSection: React.FC<ImageTextSectionProps> = ({
           }`}
         >
           <div className="flex-shrink-0 relative w-[100%] sm:w-[95%] md:w-[92%] max-w-[760px]">
-            <img
-              src={imageSrc || "/images/building.jpg"}
-              alt={title ?? "Default Image"}
-              className="object-cover rounded-[1rem] w-full h-[clamp(400px,80vw,600px)]"
-              loading="lazy"
-            />
-
+            <motion.div
+              initial={{ opacity: 0, x: reverse ? 50 : -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
+              <img
+                src={imageSrc || "/images/building.jpg"}
+                alt={title ?? "Default Image"}
+                className="object-cover rounded-[1rem] w-full h-[clamp(400px,80vw,600px)]"
+                loading="lazy"
+              />
+            </motion.div>
             {/* Floating Info Box (Mobile only) */}
             <div
               className="
@@ -269,25 +284,31 @@ const ImageTextSection: React.FC<ImageTextSectionProps> = ({
             className="max-w-[540px] mx-auto lg:mx-0 lg:my-0"
             style={{ fontFamily: "var(--font-inter)" }}
           >
-            {textNode ?? (
-              <>
-                {paragraph && (
-                  <p
-                    className={`text-[#585C67] leading-relaxed text-base sm:text-lg lg:text-[18px] ${textClassName}`}
-                  >
-                    {paragraph}
-                  </p>
-                )}
-                {ctaLabel && ctaHref && (
-                  <Link
-                    href={ctaHref}
-                    className="inline-block bg-[#0bb04f] text-white font-medium px-6 py-3 mt-6 rounded-full shadow hover:shadow-md transition"
-                  >
-                    {ctaLabel}
-                  </Link>
-                )}
-              </>
-            )}
+            <motion.div
+              initial={{ opacity: 0, x: reverse ? -50 : 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+            >
+              {textNode ?? (
+                <>
+                  {paragraph && (
+                    <p
+                      className={`text-[#585C67] leading-relaxed text-base sm:text-lg lg:text-[18px] ${textClassName}`}
+                    >
+                      {paragraph}
+                    </p>
+                  )}
+                  {ctaLabel && ctaHref && (
+                    <Link
+                      href={ctaHref}
+                      className="inline-block bg-[#0bb04f] text-white font-medium px-6 py-3 mt-6 rounded-full shadow hover:shadow-md transition"
+                    >
+                      {ctaLabel}
+                    </Link>
+                  )}
+                </>
+              )}
+            </motion.div>
           </div>
         </div>
 
@@ -313,7 +334,7 @@ const ImageTextSection: React.FC<ImageTextSectionProps> = ({
           </div>
         )} */}
       </div>
-    </section>
+    </motion.section>
   );
 };
 

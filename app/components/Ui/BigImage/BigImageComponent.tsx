@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 interface ImageTextSectionProps {
   imageSrc: string;
@@ -65,47 +66,67 @@ const BigImageComponent: React.FC<ImageTextSectionProps> = ({
         className={`flex flex-col gap-10 text-center items-start ${innerClasses}`}
       >
         <div className="w-full overflow-hidden rounded-2xl flex items-center">
-          <Image
-            src={imageSrc}
-            alt={imageAlt}
-            width={Number(imageWidth)}
-            height={Number(imageHeight)}
-            className={`object-cover w-full rounded-2xl ${imageClass} h-[350px] sm:h-[450px] md:h-[500px] lg:h-[700px]`}
-            priority
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1250px"
-          />
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <Image
+              src={imageSrc}
+              alt={imageAlt}
+              width={Number(imageWidth)}
+              height={Number(imageHeight)}
+              className={`object-cover w-full rounded-2xl ${imageClass} h-[350px] sm:h-[450px] md:h-[500px] lg:h-[700px]`}
+              priority
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1250px"
+            />
+          </motion.div>
         </div>
 
         <div className={`flex flex-col gap-6 w-full text-${paragraphAlign}`}>
-          {/* 🏷️ Optional heading */}
-          {heading && (
-            <h2
-              style={{ fontFamily: "var(--font-inter)" }}
-              className={headingClass}
-            >
-              {heading}
-            </h2>
-          )}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+          >
+            {/* 🏷️ Optional heading */}
+            {heading && (
+              <h2
+                style={{ fontFamily: "var(--font-inter)" }}
+                className={headingClass}
+              >
+                {heading}
+              </h2>
+            )}
 
-          {/* Paragraphs */}
-          {paragraphs.map((text, i) => (
-            <p
-              style={{ fontFamily: "var(--font-inter)" }}
-              key={i}
-              className={`${textColorClass} text-base sm:text-lg leading-relaxed ${paragraphClass}`}
-            >
-              {text}
-            </p>
-          ))}
+            {/* Paragraphs */}
+            {paragraphs.map((text, i) => (
+              <p
+                style={{ fontFamily: "var(--font-inter)" }}
+                key={i}
+                className={`${textColorClass} text-base sm:text-lg leading-relaxed ${paragraphClass}`}
+              >
+                {text}
+              </p>
+            ))}
+          </motion.div>
         </div>
 
         {buttonText && (
-          <button
+          <motion.div
             onClick={onButtonClick}
-            className={`bg-blue-600 text-white px-6 py-3 rounded-full font-medium hover:bg-blue-700 transition-all duration-200 ${buttonClass}`}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            {buttonText}
-          </button>
+            <button
+              onClick={onButtonClick}
+              className={`bg-blue-600 text-white px-6 py-3 rounded-full font-medium hover:bg-blue-700 transition-all duration-200 ${buttonClass}`}
+            >
+              {buttonText}
+            </button>
+          </motion.div>
         )}
       </div>
     </section>

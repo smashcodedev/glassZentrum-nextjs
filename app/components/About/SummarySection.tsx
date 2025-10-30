@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import QuoteBox from "./QuoteBox";
+import { motion } from "framer-motion";
 
 interface SummarySectionProps {
   title?: string;
@@ -32,13 +33,13 @@ const SummarySection: React.FC<SummarySectionProps> = ({
     >
       {/* === Decorative Pattern — TOP LEFT === */}
       {showDecorations && (
-        <div
+        <motion.div
           aria-hidden
-          className="
-            pointer-events-none absolute left-0 top-6 sm:left-0 sm:top-8 xl:left-0 xl:top-10 
-            opacity-80 hidden lg:block
-          "
+          className="pointer-events-none absolute left-0 top-6 sm:left-0 sm:top-8 xl:left-0 xl:top-10 opacity-80 hidden lg:block"
           style={{ zIndex: 0 }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <Image
             src={topLeftSrc}
@@ -47,18 +48,18 @@ const SummarySection: React.FC<SummarySectionProps> = ({
             height={70}
             className="object-contain"
           />
-        </div>
+        </motion.div>
       )}
 
       {/* === Decorative Pattern — BOTTOM RIGHT === */}
       {showDecorations && (
-        <div
+        <motion.div
           aria-hidden
-          className="
-            pointer-events-none absolute right-0 bottom-4 sm:right-0 sm:bottom-6 xl:right-0 xl:bottom-10 
-            opacity-80 hidden lg:block
-          "
+          className="pointer-events-none absolute right-0 bottom-4 sm:right-0 sm:bottom-6 xl:right-0 xl:bottom-10 opacity-80 hidden lg:block"
           style={{ zIndex: 0 }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
         >
           <Image
             src={bottomRightSrc}
@@ -67,15 +68,15 @@ const SummarySection: React.FC<SummarySectionProps> = ({
             height={80}
             className="object-contain"
           />
-        </div>
+        </motion.div>
       )}
 
       {/* === Main Content === */}
-      <div
-        className="
-          z-10 w-full max-w-[1100px] flex flex-col items-center text-center
-          px-2 sm:px-4 md:px-6
-        "
+      <motion.div
+        className="z-10 w-full max-w-[1100px] flex flex-col items-center text-center px-2 sm:px-4 md:px-6"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
       >
         {/* Title */}
         <h2
@@ -91,7 +92,7 @@ const SummarySection: React.FC<SummarySectionProps> = ({
 
         {/* Quote Box */}
         <QuoteBox paragraphs={paragraphs} />
-      </div>
+      </motion.div>
     </section>
   );
 };

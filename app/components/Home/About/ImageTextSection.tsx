@@ -3,6 +3,7 @@
 
 import React from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export interface ImageTextSectionProps {
   eyebrow?: string;
@@ -24,7 +25,13 @@ const ImageTextSection: React.FC<ImageTextSectionProps> = ({
   imageAlt = "Modern glass building",
 }) => {
   return (
-    <section className="w-full bg-white px-6 sm:px-8 lg:px-12 py-12 relative">
+    <motion.section
+      className="w-full bg-white px-6 sm:px-8 lg:px-12 py-12 relative"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+    >
       {/* Floating Card (Desktop) */}
       <div className="absolute z-10 justify-center w-full px-3 sm:px-4 pointer-events-none hidden md:flex top-[5rem] sm:top-[7rem] lg:top-[8rem] left-[60%] -translate-x-1/2">
         <div
@@ -60,7 +67,13 @@ const ImageTextSection: React.FC<ImageTextSectionProps> = ({
       {/* Main Grid */}
       <div className="max-w-[1250px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-0">
         {/* Left Image */}
-        <div className="flex justify-center lg:justify-start">
+        <motion.div
+          className="flex justify-center lg:justify-start"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           <div className="relative rounded-3xl overflow-hidden shadow-lg flex-shrink-0 w-full lg:w-[90%] max-w-full lg:max-w-[600px]">
             <img
               src={imageSrc}
@@ -113,30 +126,37 @@ const ImageTextSection: React.FC<ImageTextSectionProps> = ({
               </div>
             </div>
           </div>
-        </div>
-
+        </motion.div>
         {/* Right Text */}
-        <div className="order-last lg:order-last lg:pt-[15rem] -translate-x-0 lg:-translate-x-10">
-          <div
-            className="max-w-[580px] lg:max-w-[540px] mx-auto lg:mx-0"
-            style={{ fontFamily: "var(--font-inter)" }}
-          >
-            <p className="text-[#585C67] leading-[32px] text-base sm:text-lg lg:text-[22px] mb-8">
-              {paragraph}
-            </p>
 
-            <Link
-              href={ctaHref}
-              className="inline-block bg-[#0bb04f] text-white font-medium px-6 py-3 mt-6 rounded-full shadow hover:shadow-md transition"
+        <div className="order-last lg:order-last lg:pt-[15rem] -translate-x-0 lg:-translate-x-10">
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <div
+              className="max-w-[580px] lg:max-w-[540px] mx-auto lg:mx-0"
+              style={{ fontFamily: "var(--font-inter)" }}
             >
-              {ctaLabel}
-            </Link>
-          </div>
+              <p className="text-[#585C67] leading-[32px] text-base sm:text-lg lg:text-[22px] mb-8">
+                {paragraph}
+              </p>
+
+              <Link
+                href={ctaHref}
+                className="inline-block bg-[#0bb04f] text-white font-medium px-6 py-3 mt-6 rounded-full shadow hover:shadow-md transition"
+              >
+                {ctaLabel}
+              </Link>
+            </div>
+          </motion.div>
         </div>
 
         {/* Mobile Card */}
       </div>
-    </section>
+    </motion.section>
   );
 };
 

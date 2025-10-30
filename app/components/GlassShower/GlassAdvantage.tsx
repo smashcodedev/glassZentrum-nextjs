@@ -15,7 +15,8 @@ export default function GlassAdvantages() {
         className="overflow-visible"
         imageClassName="-translate-y-12"
         ctaClassName="bg-[#00a13a]"
-         textSectionWidth="!max-w-[750px]"
+        textSectionWidth="!max-w-[750px]"
+        objectFitMode="top"
       />
     </div>
   );

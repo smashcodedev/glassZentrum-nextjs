@@ -10,7 +10,7 @@ export default function GlassFitting() {
       reverse={false}
       floatingCardClassName="-translate-y-10"
       titleClassName="!text-3xl"
-      textClassName=" -translate-x-16 !text-[16px] translate-y-24 !leading-[22px]"
+      textClassName=" -x-translate-0 lg:-translate-x-16 !text-[16px] translae-y-0  lg:translate-y-24 !leading-[22px]"
       floatingClass="!p-[2rem]"
     />
   );

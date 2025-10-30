@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 
 export interface BannerProps {
   children?: React.ReactNode;
@@ -107,9 +108,12 @@ const Banner: React.FC<BannerProps> = ({
     <div
       className={`w-full flex justify-center px-10 sm:px-6 ${className || ""}`}
     >
-      <div
+      <motion.div
+        initial={{ opacity: 0, y: 20 }} // start hidden & slightly down
+        animate={{ opacity: 1, y: 0 }} // fade in and move up
+        transition={{ duration: 0.5, ease: "easeOut" }} // smooth animation
         className={[
-          "relative w-full transition-all duration-300",
+          "relative w-full",
           maxWidth,
           borderRadiusPx ? "" : normalizedRadiusClass,
           padding,
@@ -122,7 +126,6 @@ const Banner: React.FC<BannerProps> = ({
           fontSize,
           lineHeight,
           letterSpacing,
-          "rounded-2xl",
         ]
           .filter(Boolean)
           .join(" ")}
@@ -139,7 +142,6 @@ const Banner: React.FC<BannerProps> = ({
           ].join(" ")}
           style={{ fontFamily: "var(--font-inter)" }}
         >
-          {/* Title */}
           {title && (
             <h2
               className={`text-xl sm:text-3xl md:text-4xl font-bold leading-tight break-words ${
@@ -149,30 +151,20 @@ const Banner: React.FC<BannerProps> = ({
               {title}
             </h2>
           )}
-
-          {/* Subtitle */}
           {subtitle && (
             <p
               className={`text-sm sm:text-base md:text-md text-[#737780] font-normal ${
                 subtitleClassName || ""
               }`}
-              style={{ fontFamily: "var(--font-inter)" }}
             >
               {subtitle}
             </p>
           )}
-
-          {/* Highlight */}
           {highlight && (
-            <p
-              className="text-xs sm:text-sm md:text-md font-semibold text-green-600"
-              style={{ fontFamily: "var(--font-inter)" }}
-            >
+            <p className="text-xs sm:text-sm md:text-md font-semibold text-green-600">
               {highlight}
             </p>
           )}
-
-          {/* Sub Paragraphs */}
           {subParagraphs.length > 0 && (
             <div className="flex flex-col gap-2 mt-2">
               {subParagraphs.map((p, i) => (
@@ -181,15 +173,12 @@ const Banner: React.FC<BannerProps> = ({
                   className={`text-sm sm:text-base md:text-md text-[#737780] leading-relaxed break-words ${
                     paragraphClassName || ""
                   }`}
-                  style={{ fontFamily: "var(--font-inter)" }}
                 >
                   {p}
                 </p>
               ))}
             </div>
           )}
-
-          {/* CTA */}
           {showCta && ctaLabel && (
             <button
               onClick={onCta}
@@ -198,10 +187,9 @@ const Banner: React.FC<BannerProps> = ({
               {ctaLabel}
             </button>
           )}
-
           {children}
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
