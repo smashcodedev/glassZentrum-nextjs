@@ -129,7 +129,7 @@ const TwoColumnSection: React.FC<TwoColumnSectionProps> = ({
                 "max-w-[86vw] sm:max-w-[96vw] md:max-w-[98vw]",
                 imageClassName
               )}
-              style={{ aspectRatio: "16 / 11", minHeight: "260px" }}
+              style={{ aspectRatio: "16 / 10", minHeight: "300px" }}
             >
               {noNextImage ? (
                 <img

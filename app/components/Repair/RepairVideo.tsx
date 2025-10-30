@@ -9,7 +9,7 @@ export default function RepairVideo() {
       imageHeight="h-[420px] sm:h-[480px] md:h-[520px] lg:h-[560px]"
       overlayOpacity="bg-black/20"
       borderRadius="rounded-[2.5rem]"
-      imageWidth="w-full sm:w-[80%] md:w-[75%]"
+      imageWidth="lg:w-[75%] w-[96%] sm:w-full md:w-[75%]"
       maxTextWidth="max-w-[1100px]"
       className="bg-[#F6F9FF]"
     />

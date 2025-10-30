@@ -101,7 +101,7 @@ const ImageTextSection: React.FC<ImageTextSectionProps> = ({
         className={`max-w-[1250px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-0`}
       >
         {/* Image / Left */}
-        <div
+        {/* <div
           className={`flex justify-center lg:justify-start ${
             reverse ? "order-last" : "order-first"
           }`}
@@ -169,6 +169,90 @@ const ImageTextSection: React.FC<ImageTextSectionProps> = ({
                   </div>
                   <h3
                     className="text-lg sm:text-xl font-semibold text-[#0f1724] leading-snug"
+                    style={{ fontFamily: "var(--font-inter)" }}
+                  >
+                    {title}
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> */}
+        {/* 🌐 Desktop / Laptop version */}
+        <div
+          className={`hidden lg:flex justify-center lg:justify-start ${
+            reverse ? "order-last" : "order-first"
+          }`}
+        >
+          <div
+            className={`flex-shrink-0 relative ${
+              imageWidth ?? "w-[90%] max-w-[600px]"
+            } ${imageClassName}`}
+          >
+            <img
+              src={imageSrc || "/images/building.jpg"}
+              alt={title ?? "Default Image"}
+              className={`object-cover rounded-3xl ${
+                imageHeight ??
+                "h-[260px] sm:h-[315px] md:h-[360px] lg:h-[520px]"
+              } w-full`}
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        {/* 📱 Mobile / Tablet version */}
+        {/* 📱 Mobile / Tablet version */}
+        <div
+          className={`flex lg:hidden justify-center ${
+            reverse ? "order-last" : "order-first"
+          }`}
+        >
+          <div className="flex-shrink-0 relative w-[100%] sm:w-[95%] md:w-[92%] max-w-[760px]">
+            <img
+              src={imageSrc || "/images/building.jpg"}
+              alt={title ?? "Default Image"}
+              className="object-cover rounded-[1rem] w-full h-[clamp(400px,80vw,600px)]"
+              loading="lazy"
+            />
+
+            {/* Floating Info Box (Mobile only) */}
+            <div
+              className="
+        absolute 
+        z-20 
+        flex 
+        justify-start 
+        w-full 
+        pointer-events-none 
+        top-[2rem] sm:top-[2.5rem] 
+        left-[1.5rem] sm:left-[2rem]
+      "
+            >
+              <div
+                tabIndex={0}
+                className="
+          bg-white 
+          rounded-2xl sm:rounded-3xl 
+          shadow-[0px_8px_16px_rgba(0,0,0,0.12)] 
+          px-5 sm:px-7 py-4 sm:py-5 
+          w-[90%] sm:w-[75%] 
+          max-w-[420px] 
+          flex flex-col items-start 
+          pointer-events-auto 
+          transition-transform duration-300 
+          focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2D2E83]
+        "
+              >
+                <div>
+                  <div
+                    className="text-base sm:text-lg text-[#2D2E83] mb-1 sm:mb-2 font-semibold"
+                    style={{ fontFamily: "var(--font-inter)" }}
+                  >
+                    {eyebrow}
+                  </div>
+                  <h3
+                    className="text-xl sm:text-2xl font-semibold text-[#0f1724] leading-snug"
                     style={{ fontFamily: "var(--font-inter)" }}
                   >
                     {title}

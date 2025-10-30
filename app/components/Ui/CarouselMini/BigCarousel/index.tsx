@@ -30,14 +30,14 @@ export const CenterFocusCarousel: React.FC<CenterFocusCarouselProps> = ({
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
 
   return (
-    <section className="relative w-full h-[80vh] flex items-center justify-center bg-[#f6f9ff] overflow-hidden">
+    <section className="relative w-full  flex items-center justify-center bg-[#f6f9ff] overflow-hidden h-[65vh] sm:h-[70vh] md:h-[80vh]">
       <div className="relative w-full overflow-visible" ref={emblaRef}>
-        <div className="flex touch-pan-y gap-4">
+        <div className="flex touch-pan-y gap-3 sm:gap-4">
           {images.map((img, i) => (
             <div
               key={i}
               // className="flex-[0_0_80%] md:flex-[0_0_80%] lg:flex-[0_0_80%]"
-              className={`flex-[0_0_70%] sm:flex-[0_0_70%] md:flex-[0_0_70%] lg:flex-[0_0_70%]`}
+              className={`flex-[0_0_90%] sm:flex-[0_0_80%] md:flex-[0_0_70%] lg:flex-[0_0_70%]`}
               style={{
                 scrollSnapAlign: "center",
               }}
@@ -56,7 +56,7 @@ export const CenterFocusCarousel: React.FC<CenterFocusCarouselProps> = ({
       <button
         onClick={scrollPrev}
         aria-label="Previous slide"
-        className="absolute left-[15%] top-1/2 -translate-y-1/2 z-30 w-12 h-12 flex items-center justify-center rounded-full shadow-lg hover:scale-105 transition-all"
+        className="absolute left-[3%] sm:left-[10%] md:left-[15%] top-1/2 -translate-y-1/2 z-30 w-12 h-12 flex items-center justify-center rounded-full shadow-lg hover:scale-105 transition-all"
         style={{ backgroundColor: arrowBg }}
       >
         <ArrowLeft color={arrowColor} size={24} />
@@ -65,7 +65,7 @@ export const CenterFocusCarousel: React.FC<CenterFocusCarouselProps> = ({
       <button
         onClick={scrollNext}
         aria-label="Next slide"
-        className="absolute right-[15%] top-1/2 -translate-y-1/2 z-30 w-12 h-12 flex items-center justify-center rounded-full shadow-lg hover:scale-105 transition-all"
+        className="absolute right-[3%] sm:right-[10%] md:right-[15%] top-1/2 -translate-y-1/2 z-30 w-12 h-12 flex items-center justify-center rounded-full shadow-lg hover:scale-105 transition-all"
         style={{ backgroundColor: arrowBg }}
       >
         <ArrowRight color={arrowColor} size={24} />
